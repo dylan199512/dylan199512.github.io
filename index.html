@@ -251,8 +251,8 @@
 
 /* CTA BUTTON */
 .cta {
-  display: inline-block;
-  margin: 18px 0 0 0;   /* improved centering */
+  display: block;          /* allows margin auto centering */
+  margin: 24px auto 0;     /* auto = center horizontally */
   padding: 12px 24px;
   background: var(--accent);
   color: white;
@@ -271,9 +271,10 @@
   margin-bottom: 16px;
 }
 
-/* Add a touch more breathing room at the bottom of cards */
+/* Keep content left-aligned */
 .card {
   padding-bottom: 36px;
+  text-align: left;
 }
 
 @keyframes ripple {
@@ -282,6 +283,7 @@
     opacity: 0;
   }
 }
+
 
     /* PROFILE */
     .profile-wrapper {
