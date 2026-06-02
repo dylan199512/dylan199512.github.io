@@ -31,6 +31,7 @@
       scroll-behavior: smooth;
     }
 
+    /* NAV BAR */
     .nav {
       position: fixed;
       top: -80px;
@@ -91,6 +92,7 @@
       border-color: rgba(255,255,255,0.5);
     }
 
+    /* HEADER */
     header {
       background: #0d1117;
       color: white;
@@ -100,20 +102,23 @@
       background-position: center;
     }
 
-    header h1 {
-      font-size: 48px;
-      margin-bottom: 10px;
-      font-weight: 700;
+    header h1, header p {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 1.2s ease forwards;
     }
 
-    header p {
-      font-size: 18px;
-      opacity: 0.9;
-      max-width: 600px;
-      margin: 6px auto;
-      transition: opacity 1.5s ease;
+    header p:nth-of-type(1) { animation-delay: 0.3s; }
+    header p:nth-of-type(2) { animation-delay: 0.6s; }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
+    /* CONTENT */
     section {
       max-width: 900px;
       margin: 60px auto;
@@ -151,6 +156,7 @@
       padding-left: 20px;
     }
 
+    /* CTA BUTTON */
     .cta {
       display: inline-block;
       margin-top: 20px;
@@ -168,6 +174,22 @@
       filter: brightness(1.05);
     }
 
+    .cta span.ripple {
+      position: absolute;
+      border-radius: 50%;
+      transform: scale(0);
+      background: rgba(255,255,255,0.4);
+      animation: ripple 0.6s linear;
+    }
+
+    @keyframes ripple {
+      to {
+        transform: scale(4);
+        opacity: 0;
+      }
+    }
+
+    /* PROFILE */
     .profile-wrapper {
       display: flex;
       flex-direction: column;
@@ -188,6 +210,7 @@
       margin-bottom: 4px;
     }
 
+    /* FOOTER */
     footer {
       text-align: center;
       padding: 40px 20px;
@@ -242,25 +265,12 @@
       <h2>About Me</h2>
       <div class="profile-wrapper">
         <div>
-          <img
-            src="C4D87DB4-32D6-4447-87C0-2A28D69F317A.JPG"
-            alt="Dylan Reid"
-            class="profile-img"
-          >
+          <img src="C4D87DB4-32D6-4447-87C0-2A28D69F317A.JPG" alt="Dylan Reid" class="profile-img">
           <div class="profile-name">Dylan Reid</div>
         </div>
         <div>
-          <p>
-            I help healthcare and payer organizations adopt AI safely, responsibly, and in alignment 
-            with emerging regulatory frameworks. My work focuses on governance, risk assessment, 
-            model oversight, and operational readiness for enterprise AI deployment.
-          </p>
-          <p>
-            Outside of AI governance, I am an independent registered songwriter with BMI and I write 
-            modern country music. I enjoy playing golf and spending time on the road. I am often 
-            traveling between Dallas, Naples, Palm Springs, New York City, Toronto, and Nashville 
-            since those are the places I spend the most time.
-          </p>
+          <p>I help healthcare and payer organizations adopt AI safely, responsibly, and in alignment with emerging regulatory frameworks. My work focuses on governance, risk assessment, model oversight, and operational readiness for enterprise AI deployment.</p>
+          <p>Outside of AI governance, I am an independent registered songwriter with BMI and I write modern country music. I enjoy playing golf and spending time on the road. I am often traveling between Dallas, Naples, Palm Springs, New York City, Toronto, and Nashville since those are the places I spend the most time.</p>
         </div>
       </div>
     </div>
@@ -268,10 +278,7 @@
     <!-- WHAT I DO -->
     <div class="card">
       <h2>What I Do</h2>
-      <p>
-        I specialize in building AI governance frameworks, evaluating model risk, and guiding organizations 
-        through compliance with FDA, HIPAA, GDPR, and emerging responsible AI standards for healthcare.
-      </p>
+      <p>I specialize in building AI governance frameworks, evaluating model risk, and guiding organizations through compliance with FDA, HIPAA, GDPR, and emerging responsible AI standards for healthcare.</p>
       <p>Areas of focus include:</p>
       <ul>
         <li>Assess AI model risk and identify governance gaps</li>
@@ -285,34 +292,14 @@
     <!-- CONTENT & WORK -->
     <div class="card" id="content">
       <h2>Content & Work</h2>
-      <p>
-        I create tools and content that help leaders navigate responsible AI, healthcare innovation, 
-        and emerging regulatory landscapes.
-      </p>
+      <p>I create tools and content that help leaders navigate responsible AI, healthcare innovation, and emerging regulatory landscapes.</p>
 
       <ul>
-        <li><strong>Book</strong> — 
-          <a href="https://www.amazon.com/Hope-Not-Strategy-Came-Alive-ebook/dp/B0FBLJRXPK" target="_blank">
-            Hope Is Not a Strategy
-          </a>
-        </li>
-
-        <li><strong>Newsletter</strong> — Monthly insights on model risk, oversight, and policy developments. 
-          <a href="https://substack.com/@aihealthcarethoughts" target="_blank">Read on Substack</a>
-        </li>
-
-        <li><strong>Podcast</strong> — Full episodes available on 
-          <a href="https://www.youtube.com/@TheAIHealthcarePodcast/videos" target="_blank">YouTube</a>. 
-          Also available on 
-          <a href="https://open.spotify.com/show/3l2TRzKHZrDA33dhyfPUPz" target="_blank">Spotify</a> 
-          and 
-          <a href="https://podcasts.apple.com/us/podcast/the-ai-healthcare-podcast/id1639882528" target="_blank">Apple Podcasts</a>.
-        </li>
-
+        <li><strong>Book</strong> — <a href="https://www.amazon.com/Hope-Not-Strategy-Came-Alive-ebook/dp/B0FBLJRXPK" target="_blank">Hope Is Not a Strategy</a></li>
+        <li><strong>Newsletter</strong> — Monthly insights on model risk, oversight, and policy developments. <a href="https://substack.com/@aihealthcarethoughts" target="_blank">Read on Substack</a></li>
+        <li><strong>Podcast</strong> — Full episodes available on <a href="https://www.youtube.com/@TheAIHealthcarePodcast/videos" target="_blank">YouTube</a>. Also available on <a href="https://open.spotify.com/show/3l2TRzKHZrDA33dhyfPUPz" target="_blank">Spotify</a> and <a href="https://podcasts.apple.com/us/podcast/the-ai-healthcare-podcast/id1639882528" target="_blank">Apple Podcasts</a>.</li>
         <li><strong>Coding and prototypes</strong> — Governance dashboards, risk scoring tools, and bias analysis utilities</li>
-
         <li><strong>Policy and regulatory analysis</strong> — Clear explanations of AI legislation, healthcare rules, and compliance frameworks</li>
-
         <li><strong>Politics and society</strong> — How AI interacts with public policy, institutions, and democratic systems</li>
       </ul>
 
@@ -331,9 +318,7 @@
   <footer>
     © 2026 Dylan Reid Media — AI Governance & Responsible AI
     <br>
-    <a href="https://www.youtube.com/@TheAIHealthcarePodcast/videos" target="_blank">
-      The AI Healthcare Podcast on YouTube
-    </a>
+    <a href="https://www.youtube.com/@TheAIHealthcarePodcast/videos" target="_blank">The AI Healthcare Podcast on YouTube</a>
     <br>
     <span style="font-size:13px;">
       Also available on 
@@ -342,9 +327,7 @@
       <a href="https://podcasts.apple.com/us/podcast/the-ai-healthcare-podcast/id1639882528" target="_blank">Apple Podcasts</a>
     </span>
     <br><br>
-    <a href="https://substack.com/@aihealthcarethoughts" target="_blank">
-      AI Healthcare Thoughts on Substack
-    </a>
+    <a href="https://substack.com/@aihealthcarethoughts" target="_blank">AI Healthcare Thoughts on Substack</a>
   </footer>
 
   <script>
@@ -374,8 +357,29 @@
     function toggleDarkMode() {
       document.body.classList.toggle("dark");
     }
+
+    // Parallax header motion
+    window.addEventListener("scroll", () => {
+      const header = document.querySelector("header");
+      const offset = window.scrollY * 0.3;
+      header.style.backgroundPositionY = `${offset}px`;
+    });
+
+    // Button ripple effect
+    document.addEventListener("click", e => {
+      if (e.target.classList.contains("cta")) {
+        const btn = e.target;
+        const ripple = document.createElement("span");
+        ripple.classList.add("ripple");
+        ripple.style.left = `${e.clientX - btn.offsetLeft}px`;
+        ripple.style.top = `${e.clientY - btn.offsetTop}px`;
+        btn.appendChild(ripple);
+        setTimeout(() => ripple.remove(), 600);
+      }
+    });
   </script>
 
 </body>
 </html>
+
 
