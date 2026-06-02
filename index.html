@@ -3,35 +3,96 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cards Layout</title>
+<title>Dylan Reid — AI Governance & Advisory</title>
 
 <style>
-/* ========================= */
-/*          CARD LAYOUT      */
-/* ========================= */
-
-.card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* aligns buttons vertically */
-  padding: 0 0 36px 0;
-  text-align: left;
-  max-width: 600px;
-  margin: 40px auto;
-  font-family: system-ui, sans-serif;
+/* GLOBAL RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* CARD CONTENT */
-.card-content {
+body {
+  font-family: system-ui, sans-serif;
+  color: #111;
+  line-height: 1.6;
+  background: #fafafa;
+}
+
+/* LAYOUT CONTAINERS */
+section {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 120px 20px 100px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.hero p {
+  font-size: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0.8;
+}
+
+/* ABOUT SECTION */
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.about img {
+  width: 180px;
+  height: 180px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.about-content {
   flex: 1;
+}
+
+@media (min-width: 700px) {
+  .about {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+/* SECTION HEADINGS */
+section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+/* CARD SYSTEM */
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 32px;
+  margin-top: 40px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card-content ul {
   padding-left: 20px;
-  margin: 0;
 }
 
-/* CARD FOOTER — centers button horizontally */
 .card-footer {
   display: flex;
   justify-content: center;
@@ -41,7 +102,7 @@
 /* CTA BUTTON */
 .cta {
   padding: 12px 24px;
-  background: #000; /* replace with var(--accent) if using CSS vars */
+  background: #000;
   color: white;
   border-radius: 999px;
   text-decoration: none;
@@ -50,73 +111,103 @@
   letter-spacing: 0.03em;
   text-transform: uppercase;
   position: relative;
-  overflow: hidden; /* required for ripple */
+  overflow: hidden;
 }
 
-/* Ripple element */
+/* Ripple */
 .ripple {
   position: absolute;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255,255,255,0.4);
   transform: scale(0);
   animation: ripple 600ms linear;
 }
 
-/* Ripple animation */
 @keyframes ripple {
   to {
     transform: scale(4);
     opacity: 0;
   }
 }
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 60px 0;
+  opacity: 0.6;
+  font-size: 14px;
+}
 </style>
 </head>
 
 <body>
 
-<!-- ========================= -->
-<!--          CARD 1           -->
-<!-- ========================= -->
+<!-- HERO -->
+<section class="hero">
+  <h1>Dylan Reid</h1>
+  <p>AI Governance • Risk • Oversight • Responsible Deployment</p>
+</section>
 
-<div class="card">
-  <div class="card-content">
-    <h3>Content & Work</h3>
-    <p>I create tools and content that help leaders navigate responsible AI, healthcare innovation, and emerging regulatory landscapes.</p>
-    <ul>
-      <li><strong>Book —</strong> Hope Is Not a Strategy</li>
-      <li><strong>Newsletter —</strong> Monthly insights on model risk, oversight, and policy developments.</li>
-      <li><strong>Podcast —</strong> Full episodes available on YouTube, Spotify, and Apple Podcasts.</li>
-      <li><strong>Coding and prototypes —</strong> Governance dashboards, risk scoring tools, and bias analysis utilities.</li>
-      <li><strong>Policy and regulatory analysis —</strong> Clear explanations of AI legislation, healthcare rules, and compliance frameworks.</li>
-      <li><strong>Politics and society —</strong> How AI interacts with public policy, institutions, and democratic systems.</li>
-    </ul>
+<!-- ABOUT -->
+<section id="about">
+  <h2>About Me</h2>
+  <div class="about">
+    <img src="YOUR-IMAGE.jpg" alt="Dylan Reid">
+    <div class="about-content">
+      <p>I help healthcare and payer organizations adopt AI safely, responsibly, and in alignment with emerging regulatory frameworks. My work focuses on governance, risk assessment, model oversight, and operational readiness for enterprise AI deployment.</p>
+      <br>
+      <p>Outside of AI governance, I am an independent registered songwriter with BMI and I write modern country music. I enjoy playing golf and spending time on the road between Dallas, Naples, Palm Springs, New York City, Toronto, and Nashville.</p>
+    </div>
   </div>
+</section>
 
-  <div class="card-footer">
-    <a class="cta" href="#">Explore My Work</a>
+<!-- WHAT I DO -->
+<section id="what-i-do">
+  <h2>What I Do</h2>
+  <p>I work with organizations to build AI governance systems that are practical, scalable, and aligned with regulatory expectations. This includes model risk management, policy development, operational readiness, and executive advisory.</p>
+</section>
+
+<!-- CONTENT & WORK -->
+<section id="content">
+  <h2>Content & Work</h2>
+
+  <div class="card">
+    <div class="card-content">
+      <p>I create tools and content that help leaders navigate responsible AI, healthcare innovation, and emerging regulatory landscapes.</p>
+      <ul>
+        <li><strong>Book —</strong> Hope Is Not a Strategy</li>
+        <li><strong>Newsletter —</strong> Monthly insights on model risk, oversight, and policy developments.</li>
+        <li><strong>Podcast —</strong> Full episodes on YouTube, Spotify, and Apple Podcasts.</li>
+        <li><strong>Coding and prototypes —</strong> Governance dashboards, risk scoring tools, and bias analysis utilities.</li>
+        <li><strong>Policy and regulatory analysis —</strong> Clear explanations of AI legislation and compliance frameworks.</li>
+        <li><strong>Politics and society —</strong> How AI interacts with public policy and institutions.</li>
+      </ul>
+    </div>
+
+    <div class="card-footer">
+      <a class="cta" href="#">Explore My Work</a>
+    </div>
   </div>
-</div>
+</section>
 
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Get in Touch</h2>
 
-<!-- ========================= -->
-<!--          CARD 2           -->
-<!-- ========================= -->
+  <div class="card">
+    <div class="card-content">
+      <p>If you would like to collaborate, discuss AI governance, or explore advisory work, feel free to reach out.</p>
+    </div>
 
-<div class="card">
-  <div class="card-content">
-    <h3>Get in Touch</h3>
-    <p>If you would like to collaborate, discuss AI governance, or explore advisory work, feel free to reach out.</p>
+    <div class="card-footer">
+      <a class="cta" href="mailto:dylan@dylan-reid.com">Contact Me</a>
+    </div>
   </div>
+</section>
 
-  <div class="card-footer">
-    <a class="cta" href="#">Contact Me</a>
-  </div>
-</div>
-
-
-<!-- ========================= -->
-<!--        JAVASCRIPT         -->
-<!-- ========================= -->
+<footer>
+  © 2026 Dylan Reid — All Rights Reserved
+</footer>
 
 <script>
 document.querySelectorAll('.cta').forEach(button => {
@@ -140,6 +231,7 @@ document.querySelectorAll('.cta').forEach(button => {
 
 </body>
 </html>
+
 
 
 
