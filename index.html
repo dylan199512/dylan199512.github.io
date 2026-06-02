@@ -2,36 +2,115 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Dylan Reid | AI Governance, Responsible AI, and Healthcare Innovation</title>
+  <title>Dylan Reid | AI Governance, Responsible AI, Healthcare & Payer Systems</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
+    :root {
+      --bg: #f7f9fc;
+      --text: #1a1a1a;
+      --card-bg: #ffffff;
+    }
+
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: #f7f9fc;
-      color: #1a1a1a;
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.6;
+      transition: background 0.4s ease, color 0.4s ease;
+    }
+
+    body.dark {
+      --bg: #0d1117;
+      --text: #e6e6e6;
+      --card-bg: #161b22;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .nav {
+      position: fixed;
+      top: -80px;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: rgba(13,17,23,0.85);
+      backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      transition: top 0.4s ease;
+      z-index: 999;
+      padding: 0 20px;
+      gap: 20px;
+    }
+
+    .nav.visible {
+      top: 0;
+    }
+
+    .nav span.brand {
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 16px;
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    .nav-links a {
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    .dark-toggle {
+      margin-left: auto;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.3);
+      color: white;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s ease, border 0.3s ease;
+    }
+
+    .dark-toggle:hover {
+      background: rgba(255,255,255,0.15);
+      border-color: rgba(255,255,255,0.5);
     }
 
     header {
       background: #0d1117;
       color: white;
-      padding: 60px 20px;
+      padding: 100px 20px 80px;
       text-align: center;
+      background-size: cover;
+      background-position: center;
     }
 
     header h1 {
-      font-size: 42px;
+      font-size: 48px;
       margin-bottom: 10px;
       font-weight: 700;
     }
 
     header p {
       font-size: 18px;
-      opacity: 0.85;
+      opacity: 0.9;
       max-width: 600px;
-      margin: 0 auto;
+      margin: 6px auto;
       transition: opacity 1.5s ease;
     }
 
@@ -47,15 +126,19 @@
       color: #0d1117;
     }
 
+    body.dark h2 {
+      color: #e6e6e6;
+    }
+
     .card {
-      background: white;
+      background: var(--card-bg);
       padding: 24px;
-      border-radius: 12px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
-      margin-bottom: 30px;
+      border-radius: 14px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      margin-bottom: 40px;
       opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.6s ease;
+      transform: translateY(30px);
+      transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     .card.visible {
@@ -77,6 +160,32 @@
       border-radius: 6px;
       text-decoration: none;
       font-weight: 600;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta:hover {
+      filter: brightness(1.05);
+    }
+
+    .profile-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .profile-img {
+      width: 200px;
+      border-radius: 14px;
+      margin-bottom: 10px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .profile-name {
+      font-weight: 600;
+      font-size: 18px;
+      margin-bottom: 4px;
     }
 
     footer {
@@ -86,13 +195,167 @@
       font-size: 14px;
     }
 
-    html {
-      scroll-behavior: smooth;
+    body.dark footer {
+      color: #aaa;
+    }
+
+    footer a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (min-width: 720px) {
+      .profile-wrapper {
+        flex-direction: row;
+        align-items: center;
+      }
     }
   </style>
+</head>
+
+<body>
+
+  <div class="nav">
+    <span class="brand">Dylan Reid</span>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#content">Work</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="dark-toggle" onclick="toggleDarkMode()">🌙</button>
+  </div>
+
+  <header>
+    <h1>Dylan Reid Media</h1>
+    <p>AI Governance • Responsible AI • Healthcare & Payer Systems</p>
+    <p>Northern Mannerisms with Southern Hospitality</p>
+  </header>
+
+  <section>
+
+    <!-- ABOUT ME -->
+    <div class="card" id="about">
+      <h2>About Me</h2>
+      <div class="profile-wrapper">
+        <div>
+          <img
+            src="C4D87DB4-32D6-4447-87C0-2A28D69F317A.JPG"
+            alt="Dylan Reid"
+            class="profile-img"
+          >
+          <div class="profile-name">Dylan Reid</div>
+        </div>
+        <div>
+          <p>
+            I help healthcare and payer organizations adopt AI safely, responsibly, and in alignment 
+            with emerging regulatory frameworks. My work focuses on governance, risk assessment, 
+            model oversight, and operational readiness for enterprise AI deployment.
+          </p>
+          <p>
+            Outside of AI governance, I am an independent registered songwriter with BMI and I write 
+            modern country music. I enjoy playing golf and spending time on the road. I am often 
+            traveling between Dallas, Naples, Palm Springs, New York City, Toronto, and Nashville 
+            since those are the places I spend the most time.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- WHAT I DO -->
+    <div class="card">
+      <h2>What I Do</h2>
+      <p>
+        I specialize in building AI governance frameworks, evaluating model risk, and guiding organizations 
+        through compliance with FDA, HIPAA, GDPR, and emerging responsible AI standards for healthcare.
+      </p>
+      <p>Areas of focus include:</p>
+      <ul>
+        <li>Assess AI model risk and identify governance gaps</li>
+        <li>Advise healthcare organizations on safe and compliant AI deployment</li>
+        <li>Design human in the loop workflows for high risk use cases</li>
+        <li>Implement explainability standards for clinical and regulatory alignment</li>
+        <li>Build governance operating models that scale across the enterprise</li>
+      </ul>
+    </div>
+
+    <!-- CONTENT & WORK -->
+    <div class="card" id="content">
+      <h2>Content & Work</h2>
+      <p>
+        I create tools and content that help leaders navigate responsible AI, healthcare innovation, 
+        and emerging regulatory landscapes.
+      </p>
+
+      <ul>
+        <li><strong>Book</strong> — 
+          <a href="https://www.amazon.com/Hope-Not-Strategy-Came-Alive-ebook/dp/B0FBLJRXPK" target="_blank">
+            Hope Is Not a Strategy
+          </a>
+        </li>
+
+        <li><strong>Newsletter</strong> — Monthly insights on model risk, oversight, and policy developments. 
+          <a href="https://substack.com/@aihealthcarethoughts" target="_blank">Read on Substack</a>
+        </li>
+
+        <li><strong>Podcast</strong> — Full episodes available on 
+          <a href="https://www.youtube.com/@TheAIHealthcarePodcast/videos" target="_blank">YouTube</a>. 
+          Also available on 
+          <a href="https://open.spotify.com/show/3l2TRzKHZrDA33dhyfPUPz" target="_blank">Spotify</a> 
+          and 
+          <a href="https://podcasts.apple.com/us/podcast/the-ai-healthcare-podcast/id1639882528" target="_blank">Apple Podcasts</a>.
+        </li>
+
+        <li><strong>Coding and prototypes</strong> — Governance dashboards, risk scoring tools, and bias analysis utilities</li>
+
+        <li><strong>Policy and regulatory analysis</strong> — Clear explanations of AI legislation, healthcare rules, and compliance frameworks</li>
+
+        <li><strong>Politics and society</strong> — How AI interacts with public policy, institutions, and democratic systems</li>
+      </ul>
+
+      <a class="cta" href="#content">Explore My Work</a>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="card" id="contact" style="text-align:center;">
+      <h2>Get in Touch</h2>
+      <p>If you would like to collaborate, discuss AI governance, or explore advisory work, feel free to reach out.</p>
+      <a class="cta" href="mailto:dylan@dylan-reid.com">Contact Me</a>
+    </div>
+
+  </section>
+
+  <footer>
+    © 2026 Dylan Reid Media — AI Governance & Responsible AI
+    <br>
+    <a href="https://www.youtube.com/@TheAIHealthcarePodcast/videos" target="_blank">
+      The AI Healthcare Podcast on YouTube
+    </a>
+    <br>
+    <span style="font-size:13px;">
+      Also available on 
+      <a href="https://open.spotify.com/show/3l2TRzKHZrDA33dhyfPUPz" target="_blank">Spotify</a> 
+      and 
+      <a href="https://podcasts.apple.com/us/podcast/the-ai-healthcare-podcast/id1639882528" target="_blank">Apple Podcasts</a>
+    </span>
+    <br><br>
+    <a href="https://substack.com/@aihealthcarethoughts" target="_blank">
+      AI Healthcare Thoughts on Substack
+    </a>
+  </footer>
 
   <script>
-    // Fade-in cards on scroll
+    // Floating nav bar
+    window.addEventListener("scroll", () => {
+      const nav = document.querySelector(".nav");
+      if (window.scrollY > 120) nav.classList.add("visible");
+      else nav.classList.remove("visible");
+    });
+
+    // Card reveal animation
     document.addEventListener("DOMContentLoaded", () => {
       const cards = document.querySelectorAll(".card");
 
@@ -107,135 +370,12 @@
       cards.forEach(card => observer.observe(card));
     });
 
-    // Header tagline fade-in
-    window.onload = () => {
-      const tagline = document.querySelector("header p:last-of-type");
-      tagline.style.opacity = 0;
-      setTimeout(() => {
-        tagline.style.opacity = 1;
-      }, 400);
-    };
+    // Dark mode toggle
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark");
+    }
   </script>
-
-</head>
-
-<body>
-
-<header>
-  <h1>Dylan Reid Media</h1>
-  <p>AI Governance • Responsible AI • Healthcare & Payer Systems</p>
-  <p>Northern Mannerisms with Southern Hospitality</p>
-</header>
-
-<section>
-
-  <!-- ABOUT ME -->
-  <div class="card">
-    <h2>About Me</h2>
-    <img src="C4D87DB4-32D6-4447-87C0-2A28D69F317A.JPG" 
-     alt="Dylan Reid" 
-     style="width:180px; border-radius:12px; margin-bottom:20px;">
-    <p>
-      I help healthcare and payer organizations adopt AI safely, responsibly, and in alignment 
-      with emerging regulatory frameworks. My work focuses on governance, risk assessment, 
-      model oversight, and operational readiness for enterprise AI deployment.
-    </p>
-    <p>
-      Outside of AI governance, I am an independent registered songwriter with BMI and I write 
-      modern country music. I enjoy playing golf and spending time on the road. I am often 
-      traveling between Dallas, Naples, Palm Springs, New York City, Toronto, and Nashville 
-      since those are the places I spend the most time.
-    </p>
-  </div>
-
-  <!-- WHAT I DO -->
-  <div class="card">
-    <h2>What I Do</h2>
-    <p>
-     I specialize in building AI governance frameworks, evaluating model risk, and guiding organizations through compliance with FDA, HIPAA, GDPR, and emerging responsible AI standards for healthcare.
-    </p>
-    <p>Areas of focus include:</p>
-    <ul>
-      <li>Assess AI model risk and identify governance gaps</li>
-      <li>Advise healthcare organizations on safe and compliant AI deployment</li>
-      <li>Design human in the loop workflows for high risk use cases</li>
-      <li>Implement explainability standards for clinical and regulatory alignment</li>
-      <li>Build governance operating models that scale across the enterprise</li>
-    </ul>
-  </div>
-
-  <!-- CONTENT & WORK -->
-  <div class="card" id="content">
-    <h2>Content & Work</h2>
-    <p>
-      I create tools and content that help leaders navigate responsible AI, healthcare innovation, 
-      and emerging regulatory landscapes.
-    </p>
-
-    <ul>
-      <li><strong>Book</strong> — 
-        <a href="https://www.amazon.com/Hope-Not-Strategy-Came-Alive-ebook/dp/B0FBLJRXPK" target="_blank">
-          Hope Is Not a Strategy
-        </a>
-      </li>
-
-      <li><strong>Newsletter</strong> — Monthly insights on model risk, oversight, and policy developments. 
-        <a href="https://substack.com/@aihealthcarethoughts" target="_blank">Read on Substack</a>
-      </li>
-
-      <li><strong>Podcast</strong> — Full episodes available on 
-        <a href="https://www.youtube.com/@TheAIHealthcarePodcast/videos" target="_blank">YouTube</a>. 
-        Also available on 
-        <a href="https://open.spotify.com/show/3l2TRzKHZrDA33dhyfPUPz" target="_blank">Spotify</a> 
-        and 
-        <a href="https://podcasts.apple.com/us/podcast/the-ai-healthcare-podcast/id1639882528" target="_blank">Apple Podcasts</a>.
-      </li>
-
-      <li><strong>Coding and prototypes</strong> — Governance dashboards, risk scoring tools, and bias analysis utilities</li>
-
-      <li><strong>Policy and regulatory analysis</strong> — Clear explanations of AI legislation, healthcare rules, and compliance frameworks</li>
-
-      <li><strong>Politics and society</strong> — How AI interacts with public policy, institutions, and democratic systems</li>
-    </ul>
-
-    <a class="cta" href="#content">Explore My Work</a>
-  </div>
-
-  <!-- CONTACT -->
-  <div class="card" style="text-align:center;">
-    <h2>Get in Touch</h2>
-    <p>If you would like to collaborate, discuss AI governance, or explore advisory work, feel free to reach out.</p>
-    <a class="cta" href="mailto:dylan@dylan-reid.com">Contact Me</a>
-  </div>
-
-</section>
-
-<footer>
-  © 2026 Dylan Reid Media — AI Governance & Responsible AI
-  <br>
-
-  <a href="https://www.youtube.com/@TheAIHealthcarePodcast/videos" 
-     target="_blank" 
-     style="color:#555; text-decoration:none;">
-    The AI Healthcare Podcast on YouTube
-  </a>
-
-  <br>
-  <span style="color:#555; font-size:13px;">
-    Also available on 
-    <a href="https://open.spotify.com/show/3l2TRzKHZrDA33dhyfPUPz" target="_blank" style="color:#555;">Spotify</a> 
-    and 
-    <a href="https://podcasts.apple.com/us/podcast/the-ai-healthcare-podcast/id1639882528" target="_blank" style="color:#555;">Apple Podcasts</a>
-  </span>
-
-  <br><br>
-
-  <a href="https://substack.com/@aihealthcarethoughts" 
-     target="_blank" 
-     style="color:#555; text-decoration:none;">
-    AI Healthcare Thoughts on Substack
-  </a>
-</footer>
 
 </body>
 </html>
+
