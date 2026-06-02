@@ -1,283 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Dylan Reid | AI Governance, Responsible AI, Healthcare & Payer Systems</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cards Layout</title>
 
-  <style>
-    :root {
-      --bg: #f6f7fb;
-      --text: #141414;
-      --card-bg: #ffffff;
-      --accent: #0d1117;
-      --footer-border: rgba(0,0,0,0.06);
-    }
+<style>
+/* ========================= */
+/*          CARD LAYOUT      */
+/* ========================= */
 
-    body.dark {
-      --bg: #05070b;
-      --text: #e6e6e6;
-      --card-bg: #11151d;
-      --accent: #f5f5f5;
-      --footer-border: rgba(255,255,255,0.08);
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-      transition: background-color 0.4s ease, color 0.4s ease;
-      /* ultra subtle static noise */
-      background-image:
-        radial-gradient(circle at 0 0, rgba(0,0,0,0.04) 0, transparent 55%),
-        radial-gradient(circle at 100% 100%, rgba(0,0,0,0.04) 0, transparent 55%);
-      background-attachment: fixed;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    /* NAV BAR */
-    .nav {
-      position: fixed;
-      top: -80px;
-      left: 0;
-      right: 0;
-      height: 64px;
-      background: rgba(5,7,11,0.9);
-      backdrop-filter: blur(14px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      transition: top 0.4s ease;
-      z-index: 999;
-      padding: 0 24px;
-      gap: 24px;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .nav.visible {
-      top: 0;
-    }
-
-    .nav span.brand {
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-size: 13px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 18px;
-      font-size: 14px;
-      opacity: 0.9;
-    }
-
-    .nav-links a {
-      color: #ffffff;
-      text-decoration: none;
-    }
-
-    .nav-links a:hover {
-      text-decoration: underline;
-    }
-
-    .dark-toggle {
-      margin-left: auto;
-      background: transparent;
-      border: 1px solid rgba(255,255,255,0.3);
-      color: white;
-      padding: 6px 12px;
-      border-radius: 999px;
-      cursor: pointer;
-      font-size: 16px;
-      transition: background 0.3s ease, border 0.3s ease, transform 0.15s ease;
-    }
-
-    .dark-toggle:hover {
-      background: rgba(255,255,255,0.12);
-      border-color: rgba(255,255,255,0.6);
-      transform: translateY(-1px);
-    }
-/* CTA BUTTON */
-.cta {
-  display: block;          /* allows margin auto centering */
-  margin: 24px auto 0;     /* auto = center horizontally */
-  padding: 12px 24px;
-  background: var(--accent);
-  color: white;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: 600;
-  position: relative;
-  overflow: hidden;
-  font-size: 14px;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-}
-
-/* Improve spacing above the button */
-.card p:last-of-type {
-  margin-bottom: 16px;
-}
-
-/* Keep content left-aligned */
-.card {
-  padding-bottom: 36px;
-  text-align: left;
-}
-
-@keyframes ripple {
-  to {
-    transform: scale(4);
-    opacity: 0;
-  }
-}
-
-
-
-
-
-
-    /* HEADER (hybrid Reseda hero) */
-    header {
-      background: #0d1117;
-      color: white;
-      padding: 160px 20px 140px;
-      text-align: center;
-      background-size: cover;
-      background-position: center;
-    }
-
-    header-inner {
-      display: block;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    header h1 {
-      font-size: 56px;
-      line-height: 1.05;
-      margin: 0 0 18px;
-      font-weight: 700;
-      letter-spacing: -0.03em;
-    }
-
-    header p {
-      font-size: 18px;
-      opacity: 0.9;
-      max-width: 620px;
-      margin: 8px auto;
-      transition: opacity 1.5s ease;
-    }
-
-    header h1, header p {
-      opacity: 0;
-      transform: translateY(22px);
-      animation: fadeUp 1.2s ease forwards;
-    }
-
-    header p:nth-of-type(1) { animation-delay: 0.3s; }
-    header p:nth-of-type(2) { animation-delay: 0.6s; }
-
-    @keyframes fadeUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* CONTENT WRAPPER (Reseda spacing) */
-    section {
-      max-width: 960px;
-      margin: 90px auto 80px;
-      padding: 0 24px;
-    }
-
-    h2 {
-      font-size: 30px;
-      margin-bottom: 14px;
-      color: #0d1117;
-      letter-spacing: -0.02em;
-    }
-
-    body.dark h2 {
-      color: #e6e6e6;
-    }
-
-    .card {
-      background: var(--card-bg);
-      padding: 28px;
-      border-radius: 18px;
-      box-shadow: 0 14px 40px rgba(0,0,0,0.08);
-      margin-bottom: 44px;
-      opacity: 0;
-      transform: translateY(32px);
-      transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-      border: 1px solid rgba(0,0,0,0.03);
-    }
-
-    body.dark .card {
-      box-shadow: 0 18px 50px rgba(0,0,0,0.7);
-      border-color: rgba(255,255,255,0.04);
-    }
-
-    .card.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .card p {
-      margin-top: 0;
-      margin-bottom: 10px;
-      font-size: 15px;
-    }
-
-    .card ul {
-      margin-top: 10px;
-      padding-left: 20px;
-      font-size: 15px;
-    }
-.dark-toggle:hover {
-  background: rgba(255,255,255,0.12);
-  border-color: rgba(255,255,255,0.6);
-  transform: translateY(-1px);
-}
-
-/* CARD LAYOUT */
 .card {
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* pushes footer to bottom */
-  text-align: left;
+  justify-content: space-between; /* aligns buttons vertically */
   padding: 0 0 36px 0;
+  text-align: left;
+  max-width: 600px;
+  margin: 40px auto;
+  font-family: system-ui, sans-serif;
 }
 
-/* CARD BODY (text stays left-aligned) */
+/* CARD CONTENT */
 .card-content {
   flex: 1;
 }
 
-/* CARD FOOTER (button area) */
+.card-content ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+/* CARD FOOTER — centers button horizontally */
 .card-footer {
   display: flex;
-  justify-content: center; /* centers button horizontally */
+  justify-content: center;
   margin-top: 24px;
 }
 
 /* CTA BUTTON */
 .cta {
   padding: 12px 24px;
-  background: var(--accent);
+  background: #000; /* replace with var(--accent) if using CSS vars */
   color: white;
   border-radius: 999px;
   text-decoration: none;
@@ -285,221 +49,98 @@
   font-size: 14px;
   letter-spacing: 0.03em;
   text-transform: uppercase;
+  position: relative;
+  overflow: hidden; /* required for ripple */
 }
 
+/* Ripple element */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(0);
+  animation: ripple 600ms linear;
+}
 
-
-    /* PROFILE */
-    .profile-wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 18px;
-    }
-
-    .profile-img {
-      width: 210px;
-      border-radius: 18px;
-      margin-bottom: 10px;
-      box-shadow: 0 18px 40px rgba(0,0,0,0.25);
-      display: block;
-    }
-
-    .profile-name {
-      font-weight: 600;
-      font-size: 18px;
-      margin-bottom: 4px;
-    }
-
-    /* FOOTER (anchored, hybrid Reseda) */
-    footer {
-      text-align: center;
-      padding: 40px 24px 46px;
-      color: #555;
-      font-size: 14px;
-      border-top: 1px solid var(--footer-border);
-      background: linear-gradient(to bottom, rgba(0,0,0,0.02), transparent);
-    }
-
-    body.dark footer {
-      color: #aaa;
-      background: linear-gradient(to bottom, rgba(255,255,255,0.03), transparent);
-    }
-
-    footer a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    footer span {
-      display: inline-block;
-      margin-top: 4px;
-    }
-
-    @media (min-width: 720px) {
-      .profile-wrapper {
-        flex-direction: row;
-        align-items: center;
-      }
-
-      .card {
-        padding: 32px;
-      }
-
-      header h1 {
-        font-size: 60px;
-      }
-    }
-  </style>
+/* Ripple animation */
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <div class="nav">
-    <span class="brand">DYLAN REID MEDIA</span>
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#content">Work</a>
-      <a href="#contact">Contact</a>
-    </div>
-    <button class="dark-toggle" onclick="toggleDarkMode()">🌙</button>
+<!-- ========================= -->
+<!--          CARD 1           -->
+<!-- ========================= -->
+
+<div class="card">
+  <div class="card-content">
+    <h3>Content & Work</h3>
+    <p>I create tools and content that help leaders navigate responsible AI, healthcare innovation, and emerging regulatory landscapes.</p>
+
+    <ul>
+      <li><strong>Book —</strong> Hope Is Not a Strategy</li>
+      <li><strong>Newsletter —</strong> Monthly insights on model risk, oversight, and policy developments.</li>
+      <li><strong>Podcast —</strong> Full episodes available on YouTube, Spotify, and Apple Podcasts.</li>
+      <li><strong>Coding and prototypes —</strong> Governance dashboards, risk scoring tools, and bias analysis utilities</li>
+      <li><strong>Policy and regulatory analysis —</strong> Clear explanations of AI legislation, healthcare rules, and compliance frameworks</li>
+      <li><strong>Politics and society —</strong> How AI interacts with public policy, institutions, and democratic systems</li>
+    </ul>
   </div>
 
-  <header>
-    <header-inner>
-      <h1>Dylan Reid Media</h1>
-      <p>AI Governance • Responsible AI • Healthcare & Payer Systems</p>
-      <p>Northern Mannerisms with Southern Hospitality</p>
-    </header-inner>
-  </header>
+  <div class="card-footer">
+    <a class="cta" href="#">Explore My Work</a>
+  </div>
+</div>
 
-  <section>
 
-    <!-- ABOUT ME -->
-    <div class="card" id="about">
-      <h2>About Me</h2>
-      <div class="profile-wrapper">
-        <div>
-          <img src="C4D87DB4-32D6-4447-87C0-2A28D69F317A.JPG" alt="Dylan Reid" class="profile-img">
-          <div class="profile-name">Dylan Reid</div>
-        </div>
-        <div>
-          <p>I help healthcare and payer organizations adopt AI safely, responsibly, and in alignment with emerging regulatory frameworks. My work focuses on governance, risk assessment, model oversight, and operational readiness for enterprise AI deployment.</p>
-          <p>Outside of AI governance, I am an independent registered songwriter with BMI and I write modern country music. I enjoy playing golf and spending time on the road. I am often traveling between Dallas, Naples, Palm Springs, New York City, Toronto, and Nashville since those are the places I spend the most time.</p>
-        </div>
-      </div>
-    </div>
+<!-- ========================= -->
+<!--          CARD 2           -->
+<!-- ========================= -->
 
-    <!-- WHAT I DO -->
-    <div class="card">
-      <h2>What I Do</h2>
-      <p>I specialize in building AI governance frameworks, evaluating model risk, and guiding organizations through compliance with FDA, HIPAA, GDPR, and emerging responsible AI standards for healthcare.</p>
-      <p>Areas of focus include:</p>
-      <ul>
-        <li>Assess AI model risk and identify governance gaps</li>
-        <li>Advise healthcare organizations on safe and compliant AI deployment</li>
-        <li>Design human in the loop workflows for high risk use cases</li>
-        <li>Implement explainability standards for clinical and regulatory alignment</li>
-        <li>Build governance operating models that scale across the enterprise</li>
-      </ul>
-    </div>
+<div class="card">
+  <div class="card-content">
+    <h3>Get in Touch</h3>
+    <p>If you would like to collaborate, discuss AI governance, or explore advisory work, feel free to reach out.</p>
+  </div>
 
-    <!-- CONTENT & WORK -->
-    <div class="card" id="content">
-      <h2>Content & Work</h2>
-      <p>I create tools and content that help leaders navigate responsible AI, healthcare innovation, and emerging regulatory landscapes.</p>
+  <div class="card-footer">
+    <a class="cta" href="#">Contact Me</a>
+  </div>
+</div>
 
-      <ul>
-        <li><strong>Book</strong> — <a href="https://www.amazon.com/Hope-Not-Strategy-Came-Alive-ebook/dp/B0FBLJRXPK" target="_blank">Hope Is Not a Strategy</a></li>
-        <li><strong>Newsletter</strong> — Monthly insights on model risk, oversight, and policy developments. <a href="https://substack.com/@aihealthcarethoughts" target="_blank">Read on Substack</a></li>
-        <li><strong>Podcast</strong> — Full episodes available on <a href="https://www.youtube.com/@TheAIHealthcarePodcast/videos" target="_blank">YouTube</a>. Also available on <a href="https://open.spotify.com/show/3l2TRzKHZrDA33dhyfPUPz" target="_blank">Spotify</a> and <a href="https://podcasts.apple.com/us/podcast/the-ai-healthcare-podcast/id1639882528" target="_blank">Apple Podcasts</a>.</li>
-        <li><strong>Coding and prototypes</strong> — Governance dashboards, risk scoring tools, and bias analysis utilities</li>
-        <li><strong>Policy and regulatory analysis</strong> — Clear explanations of AI legislation, healthcare rules, and compliance frameworks</li>
-        <li><strong>Politics and society</strong> — How AI interacts with public policy, institutions, and democratic systems</li>
-      </ul>
 
-      <a class="cta" href="#content">Explore My Work</a>
-    </div>
+<!-- ========================= -->
+<!--        JAVASCRIPT         -->
+<!-- ========================= -->
 
-    <!-- CONTACT -->
-    <div class="card" id="contact" style="text-align:center;">
-      <h2>Get in Touch</h2>
-      <p>If you would like to collaborate, discuss AI governance, or explore advisory work, feel free to reach out.</p>
-      <a class="cta" href="mailto:dylan@dylan-reid.com">Contact Me</a>
-    </div>
+<script>
+document.querySelectorAll('.cta').forEach(button => {
+  button.addEventListener('click', function (e) {
+    const circle = document.createElement('span');
+    const diameter = Math.max(button.clientWidth, button.clientHeight);
+    const radius = diameter / 2;
 
-  </section>
+    circle.style.width = circle.style.height = `${diameter}px`;
+    circle.style.left = `${e.clientX - button.offsetLeft - radius}px`;
+    circle.style.top = `${e.clientY - button.offsetTop - radius}px`;
+    circle.classList.add('ripple');
 
-  <footer>
-    © 2026 Dylan Reid Media — AI Governance & Responsible AI
-    <br>
-    <a href="https://www.youtube.com/@TheAIHealthcarePodcast/videos" target="_blank">The AI Healthcare Podcast on YouTube</a>
-    <br>
-    <span style="font-size:13px;">
-      Also available on 
-      <a href="https://open.spotify.com/show/3l2TRzKHZrDA33dhyfPUPz" target="_blank">Spotify</a> 
-      and 
-      <a href="https://podcasts.apple.com/us/podcast/the-ai-healthcare-podcast/id1639882528" target="_blank">Apple Podcasts</a>
-    </span>
-    <br><br>
-    <a href="https://substack.com/@aihealthcarethoughts" target="_blank">AI Healthcare Thoughts on Substack</a>
-  </footer>
+    const ripple = button.getElementsByClassName('ripple')[0];
+    if (ripple) ripple.remove();
 
-  <script>
-    // Floating nav bar
-    window.addEventListener("scroll", () => {
-      const nav = document.querySelector(".nav");
-      if (window.scrollY > 120) nav.classList.add("visible");
-      else nav.classList.remove("visible");
-    });
-
-    // Card reveal animation
-    document.addEventListener("DOMContentLoaded", () => {
-      const cards = document.querySelectorAll(".card");
-
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          }
-        });
-      }, { threshold: 0.2 });
-
-      cards.forEach(card => observer.observe(card));
-    });
-
-    // Dark mode toggle
-    function toggleDarkMode() {
-      document.body.classList.toggle("dark");
-    }
-
-    // Parallax header motion
-    window.addEventListener("scroll", () => {
-      const header = document.querySelector("header");
-      const offset = window.scrollY * 0.3;
-      header.style.backgroundPositionY = `${offset}px`;
-    });
-
-    // Button ripple effect
-    document.addEventListener("click", e => {
-      if (e.target.classList.contains("cta")) {
-        const btn = e.target;
-        const rect = btn.getBoundingClientRect();
-        const ripple = document.createElement("span");
-        ripple.classList.add("ripple");
-        ripple.style.left = `${e.clientX - rect.left}px`;
-        ripple.style.top = `${e.clientY - rect.top}px`;
-        btn.appendChild(ripple);
-        setTimeout(() => ripple.remove(), 600);
-      }
-    });
-  </script>
+    button.appendChild(circle);
+  });
+});
+</script>
 
 </body>
 </html>
+
 
 
