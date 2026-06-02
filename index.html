@@ -254,9 +254,10 @@
 }
 
 /* CTA BUTTON */
+/* CTA BUTTON — centered horizontally */
 .cta {
-  display: block;          /* allows margin auto centering */
-  margin: 24px auto 0;     /* auto = center horizontally */
+  display: block;
+  margin: 24px auto 0;   /* auto centers the button */
   padding: 12px 24px;
   background: var(--accent);
   color: white;
@@ -270,23 +271,25 @@
   text-transform: uppercase;
 }
 
-/* Improve spacing above the button */
+/* Space above the button */
 .card p:last-of-type {
   margin-bottom: 16px;
 }
 
-/* Keep content left-aligned */
+/* FLEXBOX CARD — aligns buttons vertically */
 .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* pushes button to bottom */
+  text-align: left;               /* keep content left-aligned */
   padding-bottom: 36px;
-  text-align: left;
 }
 
-@keyframes ripple {
-  to {
-    transform: scale(4);
-    opacity: 0;
-  }
+/* Lists remain left-aligned and clean */
+.card ul {
+  padding-left: 20px;
 }
+
 
 
     /* PROFILE */
