@@ -109,10 +109,9 @@
       transform: translateY(-1px);
     }
 /* CTA BUTTON */
-/* CTA BUTTON */
 .cta {
-  display: block;        /* allows margin auto centering */
-  margin: 24px auto 0;   /* auto = center horizontally */
+  display: block;          /* allows margin auto centering */
+  margin: 24px auto 0;     /* auto = center horizontally */
   padding: 12px 24px;
   background: var(--accent);
   color: white;
@@ -126,19 +125,24 @@
   text-transform: uppercase;
 }
 
-/* Keep text left-aligned */
-.card {
-  text-align: left;
-}
-
-/* Ensure lists behave properly */
-.card ul {
-  padding-left: 20px;
-}
-
+/* Improve spacing above the button */
 .card p:last-of-type {
   margin-bottom: 16px;
 }
+
+/* Keep content left-aligned */
+.card {
+  padding-bottom: 36px;
+  text-align: left;
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
 
 
 
