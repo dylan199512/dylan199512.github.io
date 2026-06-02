@@ -253,41 +253,38 @@
   transform: translateY(-1px);
 }
 
+/* CARD LAYOUT */
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* pushes footer to bottom */
+  text-align: left;
+  padding: 0 0 36px 0;
+}
+
+/* CARD BODY (text stays left-aligned) */
+.card-content {
+  flex: 1;
+}
+
+/* CARD FOOTER (button area) */
+.card-footer {
+  display: flex;
+  justify-content: center; /* centers button horizontally */
+  margin-top: 24px;
+}
+
 /* CTA BUTTON */
-/* CTA BUTTON — centered horizontally */
 .cta {
-  display: block;
-  margin: 24px auto 0;   /* auto centers the button */
   padding: 12px 24px;
   background: var(--accent);
   color: white;
   border-radius: 999px;
   text-decoration: none;
   font-weight: 600;
-  position: relative;
-  overflow: hidden;
   font-size: 14px;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-}
-
-/* Space above the button */
-.card p:last-of-type {
-  margin-bottom: 16px;
-}
-
-/* FLEXBOX CARD — aligns buttons vertically */
-.card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* pushes button to bottom */
-  text-align: left;               /* keep content left-aligned */
-  padding-bottom: 36px;
-}
-
-/* Lists remain left-aligned and clean */
-.card ul {
-  padding-left: 20px;
 }
 
 
