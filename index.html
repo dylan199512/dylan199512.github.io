@@ -208,11 +208,6 @@
     .platform-icons img {
       width: 22px;
       height: 22px;
-      filter: invert(1);
-    }
-
-    body.dark .platform-icons img {
-      filter: invert(0);
     }
 
     .error {
@@ -267,78 +262,57 @@
     </div>
   </section>
 
- <section id="work">
-  <h2>My Work</h2>
+  <section id="work">
+    <h2>My Work</h2>
 
-  <div class="card">
-    <p>I create tools, writing, and analysis that help leaders navigate responsible AI.</p>
+    <div class="card">
+      <p>I create tools, writing, and analysis that help leaders navigate responsible AI.</p>
 
-    <ul style="margin-top: 16px; padding-left: 20px;">
-      <li><strong>Book —</strong> <a href="https://www.amazon.com/dp/BOFBLJRXPK">Hope Is Not a Strategy</a></li>
-      <li><strong>Newsletter —</strong> Monthly insights on AI governance and policy.</li>
-      <li><strong>Podcast —</strong> Conversations on AI, healthcare, and regulation.</li>
-      <li><strong>GitHub —</strong> <a href="https://github.com/dylan199512">my GitHub</a></li>
-    </ul>
+      <ul style="margin-top: 16px; padding-left: 20px;">
+        <li><strong>Book —</strong> <a href="https://www.amazon.com/dp/BOFBLJRXPK">Hope Is Not a Strategy</a></li>
+        <li><strong>Newsletter —</strong> Monthly insights on AI governance and policy.</li>
+        <li><strong>Podcast —</strong> Conversations on AI, healthcare, and regulation.</li>
+        <li><strong>GitHub —</strong> <a href="https://github.com/dylan199512">my GitHub</a></li>
+      </ul>
 
-    <div class="card-footer">
-      <a class="cta" href="https://github.com/dylan199512">Explore My Work</a>
-    </div>
-  </div>
-</section>
-
-  
- <section id="listen">
-  <h2>Listen & Subscribe</h2>
-
-  <div class="card">
-    <div class="card-content">
-      <p>Follow my work across platforms.</p>
-
-      <div class="platform-icons">
-        <a href="https://open.spotify.com/show/312TRzKHZrDA33dhyfPUPz" target="_blank">
-          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/spotify.svg" alt="Spotify" />
-        </a>
-
-        <a href="https://podcasts.apple.com/us/podcast/the-ai-healthcare-podcast/id1639882528" target="_blank">
-          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/applepodcasts.svg" alt="Apple Podcasts" />
-        </a>
-
-        <a href="https://substack.com/@aihealthcarethoughts" target="_blank">
-          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/substack.svg" alt="Substack" />
-        </a>
-
-        <a href="https://www.youtube.com/@TheAIHealthcarePodcast/videos" target="_blank">
-          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube" />
-        </a>
+      <div class="card-footer">
+        <a class="cta" href="https://github.com/dylan199512">Explore My Work</a>
       </div>
     </div>
+  </section>
 
-    <div class="card-footer">
-      <a class="cta" href="https://substack.com/@aihealthcarethoughts" target="_blank">Subscribe</a>
-    </div>
-  </div>
-</section>
+  <section id="listen">
+    <h2>Listen & Subscribe</h2>
 
+    <div class="card">
+      <div class="card-content">
+        <p>Follow my work across platforms.</p>
 
-    <div class="card-footer">
-      <a class="cta" href="https://substack.com/@aihealthcarethoughts" target="_blank">Subscribe</a>
-    </div>
-  </div>
-</section>
+        <div class="platform-icons">
+          <a href="https://open.spotify.com/show/312TRzKHZrDA33dhyfPUPz" target="_blank">
+            <img src="https://cdn.simpleicons.org/spotify/ffffff" alt="Spotify" />
+          </a>
 
+          <a href="https://podcasts.apple.com/us/podcast/the-ai-healthcare-podcast/id1639882528" target="_blank">
+            <img src="https://cdn.simpleicons.org/applepodcasts/ffffff" alt="Apple Podcasts" />
+          </a>
 
-    <div class="card-footer">
-      <a class="cta" href="https://substack.com/@aihealthcarethoughts" target="_blank">Subscribe</a>
-    </div>
-  </div>
-</section>
+          <a href="https://substack.com/@aihealthcarethoughts" target="_blank">
+            <img src="https://cdn.simpleicons.org/substack/ffffff" alt="Substack" />
+          </a>
 
+          <a href="https://www.youtube.com/@TheAIHealthcarePodcast/videos" target="_blank">
+            <img src="https://cdn.simpleicons.org/youtube/ffffff" alt="YouTube" />
+          </a>
+        </div>
+      </div>
 
       <div class="card-footer">
         <a class="cta" href="https://substack.com/@aihealthcarethoughts" target="_blank">Subscribe</a>
       </div>
     </div>
   </section>
+
   <section id="workwithme">
     <h2>Work With Me</h2>
 
@@ -481,19 +455,18 @@
       </div>
     </div>
   </section>
+
   <footer>
     © 2026 Dylan Reid Media — All Rights Reserved
   </footer>
 
   <script>
-    // Navbar scroll effect
     const navbar = document.getElementById("navbar");
     window.addEventListener("scroll", () => {
       if (window.scrollY > 50) navbar.classList.add("scrolled");
       else navbar.classList.remove("scrolled");
     });
 
-    // Dark / Light mode toggle
     const toggle = document.getElementById("modeToggle");
     const body = document.body;
 
@@ -509,10 +482,8 @@
       );
     });
 
-    // Capture referral source
     document.getElementById("sourceField").value = document.referrer || "direct";
 
-    // Intake form validation + success message
     document.getElementById("intakeForm").addEventListener("submit", function (e) {
       const form = e.target;
       let valid = true;
@@ -538,11 +509,10 @@
       }, 500);
     });
 
-    // Section fade‑in animation
     const sections = document.querySelectorAll("section");
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-          if (entry.isIntersecting) {
+        if (entry.isIntersecting) {
           entry.target.classList.add("visible");
         }
       });
