@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dylan Reid Media</title>
 
   <style>
@@ -265,7 +265,7 @@
     <h2>About Me</h2>
 
     <div class="about">
-      <img src="C4D87DB4-32D6-4447-87C0-2A28D69F317A.JPG" alt="Dylan Reid">
+      <img src="C4D87DB4-32D6-4447-87C0-2A28D69F317A.JPG" alt="Dylan Reid" />
 
       <div>
         <p>
@@ -274,7 +274,7 @@
           model oversight, and operational readiness for enterprise AI deployment.
         </p>
 
-        <br>
+        <br />
 
         <p>
           Outside of AI governance, I am an independent registered songwriter with BMI and I
@@ -315,19 +315,19 @@
 
         <div class="platform-icons">
           <a href="https://open.spotify.com/show/312TRzKHZrDA33dhyfPUPz" target="_blank">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/spotify.svg" alt="Spotify">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/spotify.svg" alt="Spotify" />
           </a>
 
           <a href="https://podcasts.apple.com/us/podcast/the-ai-healthcare-podcast/id1639882528" target="_blank">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/applepodcasts.svg" alt="Apple Podcasts">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/applepodcasts.svg" alt="Apple Podcasts" />
           </a>
 
           <a href="https://substack.com/@aihealthcarethoughts" target="_blank">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/substack.svg" alt="Substack">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/substack.svg" alt="Substack" />
           </a>
 
           <a href="https://www.youtube.com/@TheAIHealthcarePodcast/videos" target="_blank">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube" />
           </a>
         </div>
       </div>
@@ -349,7 +349,7 @@
           safely, responsibly, and in alignment with emerging regulatory frameworks.
         </p>
 
-        <br>
+        <br />
 
         <h3>What I Do</h3>
         <ul>
@@ -359,7 +359,7 @@
           <li>Model Oversight & Risk Assessment</li>
         </ul>
 
-        <br>
+        <br />
 
         <h3>How I Work</h3>
         <ul>
@@ -368,7 +368,7 @@
           <li>Executive briefings and leadership workshops</li>
         </ul>
 
-        <br>
+        <br />
 
         <h3>Who I Work With</h3>
         <ul>
@@ -401,23 +401,23 @@
       <form id="intakeForm" action="https://formspree.io/f/mwkggpzy" method="POST"
             style="display: flex; flex-direction: column; gap: 16px; margin-top: 20px;">
 
-        <input type="hidden" name="source" id="sourceField" value="direct">
+        <input type="hidden" name="source" id="sourceField" value="direct" />
 
         <label>
           Your Name (required)
-          <input type="text" name="name" required>
+          <input type="text" name="name" required />
           <span class="error">Please enter your name.</span>
         </label>
 
         <label>
           Email Address (required)
-          <input type="email" name="email" required>
+          <input type="email" name="email" required />
           <span class="error">Please enter a valid email.</span>
         </label>
 
         <label>
           Organization (optional)
-          <input type="text" name="organization">
+          <input type="text" name="organization" />
         </label>
 
         <label>
@@ -447,7 +447,7 @@
         </label>
 
         <label style="display: flex; align-items: center; gap: 8px;">
-          <input type="checkbox" name="nda_needed" value="Yes">
+          <input type="checkbox" name="nda_needed" value="Yes" />
           I may need an NDA for this discussion
         </label>
 
@@ -535,7 +535,12 @@
       entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add("visible");
       });
-    },
+    }, { threshold: 0.2 });
+    sections.forEach(section => observer.observe(section));
+  </script>
+
+</body>
+</html>
 
 
 
