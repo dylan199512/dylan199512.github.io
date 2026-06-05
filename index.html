@@ -1,10 +1,12 @@
-<!-- rebuild4 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dylan Reid Media</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -23,6 +25,7 @@
       color: #F5F5F2;
     }
 
+    /* NAVBAR */
     nav {
       position: fixed;
       top: 0;
@@ -41,16 +44,11 @@
       box-shadow: 0 4px 20px rgba(0,0,0,0.25);
     }
 
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-    }
-
     nav a {
       text-decoration: none;
       color: inherit;
       font-weight: 500;
+      margin-left: 24px;
       transition: opacity 0.2s ease;
     }
 
@@ -65,6 +63,7 @@
 
     .toggle:hover { opacity: 1; }
 
+    /* HERO */
     .hero {
       text-align: center;
       padding: 180px 20px 140px;
@@ -74,6 +73,7 @@
     .hero h3 { font-size: 18px; opacity: 0.8; margin-bottom: 12px; }
     .hero p { font-size: 20px; opacity: 0.8; }
 
+    /* SECTIONS */
     section {
       max-width: 900px;
       margin: 80px auto;
@@ -121,6 +121,7 @@
       transform: scaleX(1);
     }
 
+    /* CARDS */
     .card {
       background: white;
       border-radius: 16px;
@@ -159,6 +160,7 @@
       color: #111111;
     }
 
+    /* ABOUT */
     .about {
       display: flex;
       flex-direction: column;
@@ -179,6 +181,7 @@
       }
     }
 
+    /* PLATFORM ICONS (Font Awesome) */
     .platform-icons {
       display: flex;
       gap: 24px;
@@ -193,6 +196,8 @@
       height: 42px;
       border-radius: 50%;
       background: #111111;
+      color: white;
+      font-size: 20px;
       transition: transform 0.2s ease, background 0.2s ease;
       opacity: 0;
       transform: translateY(10px);
@@ -200,27 +205,18 @@
 
     body.dark .platform-icons a {
       background: #F5F5F2;
+      color: #111111;
     }
 
     .platform-icons a:hover {
       transform: translateY(-4px);
-    }
-
-    .platform-icons img {
-      width: 22px;
-      height: 22px;
-    }
-
-    .error {
-      color: red;
-      font-size: 13px;
-      display: none;
     }
   </style>
 </head>
 
 <body>
 
+  <!-- NAVBAR -->
   <nav id="navbar">
     <div class="nav-left">
       <span class="brand">Dylan Reid Media</span>
@@ -233,12 +229,14 @@
     <div class="toggle" id="modeToggle">Light / Dark</div>
   </nav>
 
+  <!-- HERO -->
   <section class="hero">
     <h1>Dylan Reid</h1>
     <h3>President, Dylan Reid Media</h3>
     <p>AI Governance • Risk • Oversight • Responsible Deployment</p>
   </section>
 
+  <!-- ABOUT -->
   <section id="about">
     <h2>About Me</h2>
 
@@ -263,6 +261,7 @@
     </div>
   </section>
 
+  <!-- WORK -->
   <section id="work">
     <h2>My Work</h2>
 
@@ -282,35 +281,36 @@
     </div>
   </section>
 
+  <!-- LISTEN -->
   <section id="listen">
     <h2>Listen & Subscribe</h2>
 
     <div class="card">
       <div class="card-content">
         <p>Follow my work across platforms.</p>
-<div class="platform-icons">
-  <a href="https://open.spotify.com/show/312TRzKHZrDA33dhyfPUPz" target="_blank">
-    <img src="https://cdn.simpleicons.org/spotify/ffffff" alt="Spotify" />
-  </a>
 
-  <a href="https://podcasts.apple.com/us/podcast/the-ai-healthcare-podcast/id1639882528" target="_blank">
-    <img src="https://cdn.simpleicons.org/applepodcasts/ffffff" alt="Apple Podcasts" />
-  </a>
+        <div class="platform-icons">
+          <a href="https://open.spotify.com/show/312TRzKHZrDA33dhyfPUPz" target="_blank">
+            <i class="fa-brands fa-spotify"></i>
+          </a>
 
-  <a href="https://substack.com/@aihealthcarethoughts" target="_blank">
-    <img src="https://cdn.simpleicons.org/substack/ffffff" alt="Substack" />
-  </a>
+          <a href="https://podcasts.apple.com/us/podcast/the-ai-healthcare-podcast/id1639882528" target="_blank">
+            <i class="fa-brands fa-apple"></i>
+          </a>
 
-  <a href="https://www.youtube.com/@TheAIHealthcarePodcast/videos" target="_blank">
-    <img src="https://cdn.simpleicons.org/youtube/ffffff" alt="YouTube" />
-  </a>
+          <a href="https://substack.com/@aihealthcarethoughts" target="_blank">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
 
-  <!-- LinkedIn -->
-  <a href="https://www.linkedin.com/in/dylan-reid-moskowitz/" target="_blank">
-    <img src="https://cdn.simpleicons.org/linkedin/ffffff" alt="LinkedIn" />
-  </a>
-</div>
+          <a href="https://www.youtube.com/@TheAIHealthcarePodcast/videos" target="_blank">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
 
+          <a href="https://www.linkedin.com/in/dylan-reid-moskowitz/" target="_blank">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+        </div>
+      </div>
 
       <div class="card-footer">
         <a class="cta" href="https://substack.com/@aihealthcarethoughts" target="_blank">Subscribe</a>
@@ -318,208 +318,34 @@
     </div>
   </section>
 
+  <!-- CONSULTING -->
   <section id="workwithme">
-    <h2>Work With Me</h2>
+    <h2>Consulting</h2>
 
     <div class="card">
-      <div style="text-align: left;">
-        <p>
-          I help healthcare systems, payers, and AI‑driven organizations deploy artificial intelligence 
-          safely, responsibly, and in alignment with emerging regulatory frameworks.
-        </p>
-
-        <br />
-
-        <h3>What I Do</h3>
-        <ul>
-          <li>AI Governance & Regulatory Alignment</li>
-          <li>Clinical Workflow AI Evaluation</li>
-          <li>Documentation & Prior Authorization Automation</li>
-          <li>Model Oversight & Risk Assessment</li>
-        </ul>
-
-        <br />
-
-        <h3>How I Work</h3>
-        <ul>
-          <li>Project‑based engagements (6–10 weeks)</li>
-          <li>Advisory partnerships</li>
-          <li>Executive briefings and leadership workshops</li>
-        </ul>
-
-        <br />
-
-        <h3>Who I Work With</h3>
-        <ul>
-          <li>Health systems</li>
-          <li>Payers</li>
-          <li>AI vendors</li>
-          <li>Policy organizations</li>
-          <li>Clinical operations teams</li>
-        </ul>
-
-        <p style="margin-top: 24px; font-weight: 500;">
-          I offer a free 30‑minute consultation to understand your goals and determine whether my 
-          approach is a good fit for your organization.
-        </p>
-      </div>
+      <p>
+        I work with healthcare and payer organizations to build AI governance frameworks,
+        evaluate model risk, and prepare for regulatory compliance.
+      </p>
 
       <div class="card-footer">
-        <a class="cta" href="#intake">Book a 30‑Minute Call</a>
+        <a class="cta" href="mailto:dylan@dylan-reid.com">Work With Me</a>
       </div>
     </div>
   </section>
-
-  <section id="intake">
-    <h2>Consultation Intake Form</h2>
-
-    <div class="card">
-      <p>Please share a few details so I can prepare for our call.</p>
-
-      <form id="intakeForm" action="https://formspree.io/f/mwkggpzy" method="POST"
-            style="display: flex; flex-direction: column; gap: 16px; margin-top: 20px;">
-
-        <input type="hidden" name="source" id="sourceField" value="direct" />
-
-        <label>
-          Your Name (required)
-          <input type="text" name="name" required />
-          <span class="error">Please enter your name.</span>
-        </label>
-
-        <label>
-          Email Address (required)
-          <input type="email" name="email" required />
-          <span class="error">Please enter a valid email.</span>
-        </label>
-
-        <label>
-          Organization (optional)
-          <input type="text" name="organization" />
-        </label>
-
-        <label>
-          What would you like help with? (required)
-          <select name="topic" required>
-            <option value="">Select one...</option>
-            <option value="AI Governance">AI Governance</option>
-            <option value="Clinical Workflow AI">Clinical Workflow AI</option>
-            <option value="Documentation Automation">Documentation / Prior Authorization</option>
-            <option value="Model Oversight & Risk">Model Oversight & Risk Assessment</option>
-            <option value="Other">Other</option>
-          </select>
-          <span class="error">Please select a topic.</span>
-        </label>
-
-        <label>
-          How did you hear about me?
-          <select name="referral">
-            <option value="">Select one...</option>
-            <option value="LinkedIn">LinkedIn</option>
-            <option value="Podcast">Podcast</option>
-            <option value="Substack">Substack</option>
-            <option value="Google Search">Google Search</option>
-            <option value="Referral">Referral</option>
-            <option value="Other">Other</option>
-          </select>
-        </label>
-
-        <label style="display: flex; align-items: center; gap: 8px;">
-          <input type="checkbox" name="nda_needed" value="Yes" />
-          I may need an NDA for this discussion
-        </label>
-
-        <label>
-          Briefly describe your goals (optional)
-          <textarea name="message" rows="4"></textarea>
-        </label>
-
-        <div class="card-footer" style="justify-content: flex-start;">
-          <button type="submit" class="cta">Submit Intake Form</button>
-        </div>
-
-        <p id="successMessage" style="color: green; display: none;">
-          Thank you — your intake form has been submitted successfully!
-        </p>
-
-      </form>
-    </div>
-  </section>
-
-  <section id="schedule">
-    <h2>Schedule a 30‑Minute Consultation</h2>
-
-    <div class="card">
-      <p>Book a free 30‑minute consultation directly on my calendar.</p>
-
-      <div style="min-width:320px;height:700px;">
-        <iframe 
-          src="https://calendly.com/dylan-reid?hide_gdpr_banner=1"
-          width="100%" height="100%" frameborder="0">
-        </iframe>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    © 2026 Dylan Reid Media — All Rights Reserved
-  </footer>
 
   <script>
-    const navbar = document.getElementById("navbar");
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 50) navbar.classList.add("scrolled");
-      else navbar.classList.remove("scrolled");
-    });
-
+    // Dark/Light Mode Toggle
     const toggle = document.getElementById("modeToggle");
-    const body = document.body;
-
-    if (localStorage.getItem("theme") === "dark") {
-      body.classList.add("dark");
-    }
-
     toggle.addEventListener("click", () => {
-      body.classList.toggle("dark");
-      localStorage.setItem(
-        "theme",
-        body.classList.contains("dark") ? "dark" : "light"
-      );
+      document.body.classList.toggle("dark");
     });
 
-    document.getElementById("sourceField").value = document.referrer || "direct";
-
-    document.getElementById("intakeForm").addEventListener("submit", function (e) {
-      const form = e.target;
-      let valid = true;
-
-      form.querySelectorAll("input[required], select[required]").forEach(field => {
-        const error = field.parentElement.querySelector(".error");
-        if (!field.value.trim()) {
-          if (error) error.style.display = "block";
-          valid = false;
-        } else {
-          if (error) error.style.display = "none";
-        }
-      });
-
-      if (!valid) {
-        e.preventDefault();
-        return;
-      }
-
-      setTimeout(() => {
-        const success = document.getElementById("successMessage");
-        if (success) success.style.display = "block";
-      }, 500);
-    });
-
+    // Scroll Animations
     const sections = document.querySelectorAll("section");
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
+        if (entry.isIntersecting) entry.target.classList.add("visible");
       });
     }, { threshold: 0.2 });
 
