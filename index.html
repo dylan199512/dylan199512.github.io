@@ -36,6 +36,7 @@
       align-items: center;
       transition: padding 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
       z-index: 1000;
+      background: transparent;
     }
 
     nav.scrolled {
@@ -44,12 +45,23 @@
       box-shadow: 0 4px 20px rgba(0,0,0,0.25);
     }
 
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .brand {
+      font-weight: 600;
+      font-size: 16px;
+    }
+
     nav a {
       text-decoration: none;
       color: inherit;
       font-weight: 500;
-      margin-left: 24px;
       transition: opacity 0.2s ease;
+      white-space: nowrap;
     }
 
     nav a:hover { opacity: 0.6; }
@@ -59,13 +71,16 @@
       font-weight: 500;
       margin-left: 32px;
       opacity: 0.8;
+      white-space: nowrap;
     }
 
     .toggle:hover { opacity: 1; }
+
     /* HERO */
     .hero {
       text-align: center;
       padding: 180px 20px 140px;
+      margin-top: 0;
     }
 
     .hero h1 {
@@ -165,6 +180,12 @@
       letter-spacing: 0.03em;
       cursor: pointer;
       display: inline-block;
+      border: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .cta:hover {
+      opacity: 0.8;
     }
 
     body.dark .cta {
@@ -198,6 +219,7 @@
       display: flex;
       gap: 24px;
       margin-top: 24px;
+      flex-wrap: wrap;
     }
 
     .platform-icons a {
@@ -210,10 +232,22 @@
       background: #111111;
       color: white;
       font-size: 20px;
-      transition: transform 0.2s ease, background 0.2s ease;
+      transition: transform 0.2s ease, background 0.2s ease, opacity 0.6s ease;
       opacity: 0;
       transform: translateY(10px);
     }
+
+    section.visible .platform-icons a {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    section.visible .platform-icons a:nth-child(1) { transition-delay: 0.1s; }
+    section.visible .platform-icons a:nth-child(2) { transition-delay: 0.15s; }
+    section.visible .platform-icons a:nth-child(3) { transition-delay: 0.2s; }
+    section.visible .platform-icons a:nth-child(4) { transition-delay: 0.25s; }
+    section.visible .platform-icons a:nth-child(5) { transition-delay: 0.3s; }
+    section.visible .platform-icons a:nth-child(6) { transition-delay: 0.35s; }
 
     body.dark .platform-icons a {
       background: #F5F5F2;
@@ -242,6 +276,15 @@
       background: #222;
       color: #F5F5F2;
       border: 1px solid #444;
+    }
+
+    /* CALENDLY */
+    #calendly {
+      display: none;
+    }
+
+    #calendly.visible {
+      display: block;
     }
   </style>
 </head>
@@ -273,7 +316,7 @@
     <h2>About Me</h2>
 
     <div class="about">
-      <img src="C4D87DB4-32D6-4447-87C0-2A28D69F317A.JPG" alt="Dylan Reid" />
+      <img src="https://via.placeholder.com/180x180?text=Dylan+Reid" alt="Dylan Reid" />
 
       <div>
         <p>
@@ -321,27 +364,27 @@
         <p>Follow my work across platforms.</p>
 
         <div class="platform-icons">
-          <a href="https://open.spotify.com/show/312TRzKHZrDA33dhyfPUPz" target="_blank">
+          <a href="https://open.spotify.com/show/312TRzKHZrDA33dhyfPUPz" target="_blank" title="Spotify">
             <i class="fa-brands fa-spotify"></i>
           </a>
 
-          <a href="https://podcasts.apple.com/us/podcast/the-ai-healthcare-podcast/id1639882528" target="_blank">
+          <a href="https://podcasts.apple.com/us/podcast/the-ai-healthcare-podcast/id1639882528" target="_blank" title="Apple Podcasts">
             <i class="fa-brands fa-apple"></i>
           </a>
 
-          <a href="https://substack.com/@aihealthcarethoughts" target="_blank">
+          <a href="https://substack.com/@aihealthcarethoughts" target="_blank" title="Newsletter">
             <i class="fa-solid fa-envelope"></i>
           </a>
 
-          <a href="https://www.youtube.com/@TheAIHealthcarePodcast/videos" target="_blank">
+          <a href="https://www.youtube.com/@TheAIHealthcarePodcast/videos" target="_blank" title="YouTube">
             <i class="fa-brands fa-youtube"></i>
           </a>
 
-          <a href="https://www.linkedin.com/in/dylan-reid-moskowitz/" target="_blank">
+          <a href="https://www.linkedin.com/in/dylan-reid-moskowitz/" target="_blank" title="LinkedIn">
             <i class="fa-brands fa-linkedin"></i>
           </a>
 
-          <a href="https://github.com/dylan199512" target="_blank">
+          <a href="https://github.com/dylan199512" target="_blank" title="GitHub">
             <i class="fa-brands fa-github"></i>
           </a>
         </div>
@@ -375,7 +418,7 @@
       </label>
 
       <div class="card-footer">
-        <a class="cta" id="scheduleBtn" href="#">Continue</a>
+        <button class="cta" id="scheduleBtn">Continue to Calendly</button>
       </div>
     </div>
   </section>
@@ -400,11 +443,23 @@
       document.body.classList.toggle("dark");
     });
 
+    // Navbar Scroll Detection
+    const navbar = document.getElementById("navbar");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    });
+
     // Scroll Animations
     const sections = document.querySelectorAll("section");
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add("visible");
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
       });
     }, { threshold: 0.2 });
 
@@ -415,19 +470,21 @@
       const help = document.getElementById("help-type").value;
       const nda = document.getElementById("nda-needed").checked ? "Yes" : "No";
 
-      // Open Calendly
-      window.open("https://calendly.com/dylan-reid", "_blank");
+      // Show Calendly section and scroll to it
+      const calendlySection = document.getElementById("calendly");
+      calendlySection.classList.add("visible");
+      calendlySection.scrollIntoView({ behavior: "smooth" });
 
-      // Open email with details
-      window.location.href =
-        `mailto:dylan@dylan-reid.com?subject=Scheduling a Call&body=` +
-        `Help needed: ${help}%0D%0A` +
-        `NDA required: ${nda}`;
+      // Send email in background (non-blocking)
+      const emailBody = `Help needed: ${help}%0D%0ANDA required: ${nda}`;
+      const mailtoLink = `mailto:dylan@dylan-reid.com?subject=Scheduling a Call&body=${emailBody}`;
+      
+      // Use a hidden link to avoid blocking navigation
+      const link = document.createElement("a");
+      link.href = mailtoLink;
+      link.click();
     });
   </script>
 
 </body>
 </html>
-
-
-
