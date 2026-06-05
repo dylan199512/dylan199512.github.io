@@ -6,14 +6,7 @@
   <title>Dylan Reid Media</title>
 
   <style>
-    /*
-    GLOBAL RESET & TYPOGRAPHY
-    */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: Geist, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -24,15 +17,11 @@
       transition: background 0.3s ease, color 0.3s ease;
     }
 
-    /* Dark Mode */
     body.dark {
       background: #111111;
       color: #F5F5F2;
     }
 
-    /*
-    FLOATING NAVIGATION
-    */
     nav {
       position: fixed;
       top: 0;
@@ -57,10 +46,6 @@
       gap: 24px;
     }
 
-    .brand {
-      font-weight: 600;
-    }
-
     nav a {
       text-decoration: none;
       color: inherit;
@@ -68,11 +53,8 @@
       transition: opacity 0.2s ease;
     }
 
-    nav a:hover {
-      opacity: 0.6;
-    }
+    nav a:hover { opacity: 0.6; }
 
-    /* Dark Mode Toggle */
     .toggle {
       cursor: pointer;
       font-weight: 500;
@@ -80,39 +62,31 @@
       opacity: 0.8;
     }
 
-    .toggle:hover {
-      opacity: 1;
-    }
+    .toggle:hover { opacity: 1; }
 
-    /*
-    HERO
-    */
     .hero {
       text-align: center;
       padding: 180px 20px 140px;
     }
 
-    .hero h1 {
-      font-size: 48px;
-      font-weight: 700;
-      margin-bottom: 8px;
+    .hero h1 { font-size: 48px; font-weight: 700; margin-bottom: 8px; }
+    .hero h3 { font-size: 18px; opacity: 0.8; margin-bottom: 12px; }
+    .hero p { font-size: 20px; opacity: 0.8; }
+
+    section {
+      max-width: 900px;
+      margin: 80px auto;
+      padding: 0 20px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.7s ease;
     }
 
-    .hero h3 {
-      font-size: 18px;
-      font-weight: 500;
-      opacity: 0.8;
-      margin-bottom: 12px;
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
-    .hero p {
-      font-size: 20px;
-      opacity: 0.8;
-    }
-
-    /*
-    SECTION HEADERS (Animated)
-    */
     section h2 {
       font-size: 32px;
       margin-bottom: 20px;
@@ -146,23 +120,6 @@
       transform: scaleX(1);
     }
 
-    /*
-    SECTIONS & CARDS
-    */
-    section {
-      max-width: 900px;
-      margin: 80px auto;
-      padding: 0 20px;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.7s ease;
-    }
-
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
     .card {
       background: white;
       border-radius: 16px;
@@ -177,19 +134,12 @@
       box-shadow: 0 4px 20px rgba(255,255,255,0.06);
     }
 
-    .card-content ul {
-      padding-left: 20px;
-    }
-
     .card-footer {
       display: flex;
       justify-content: center;
       margin-top: 24px;
     }
 
-    /*
-    CTA BUTTON + RIPPLE
-    */
     .cta {
       padding: 12px 24px;
       background: #111111;
@@ -201,7 +151,6 @@
       letter-spacing: 0.03em;
       position: relative;
       overflow: hidden;
-      border: none;
       cursor: pointer;
       display: inline-block;
     }
@@ -211,24 +160,6 @@
       color: #111111;
     }
 
-    .ripple {
-      position: absolute;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.4);
-      transform: scale(0);
-      animation: ripple 600ms linear;
-    }
-
-    @keyframes ripple {
-      to {
-        transform: scale(4);
-        opacity: 0;
-      }
-    }
-
-    /*
-    ABOUT SECTION
-    */
     .about {
       display: flex;
       flex-direction: column;
@@ -242,10 +173,6 @@
       object-fit: cover;
     }
 
-    .about-content {
-      flex: 1;
-    }
-
     @media (min-width: 700px) {
       .about {
         flex-direction: row;
@@ -253,49 +180,6 @@
       }
     }
 
-    /*
-    PLATFORM ICONS
-    */
-    .platform-icons {
-      display: flex;
-      gap: 24px;
-      margin-top: 24px;
-    }
-
-    .platform-icons a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: #111111;
-      transition: transform 0.2s ease, background 0.2s ease;
-      opacity: 0;
-      transform: translateY(10px);
-    }
-
-    body.dark .platform-icons a {
-      background: #F5F5F2;
-    }
-
-    .platform-icons a:hover {
-      transform: translateY(-4px);
-    }
-
-    .platform-icons img {
-      width: 22px;
-      height: 22px;
-      filter: invert(1);
-    }
-
-    body.dark .platform-icons img {
-      filter: invert(0);
-    }
-
-    /*
-    FOOTER
-    */
     footer {
       text-align: center;
       padding: 60px 0;
@@ -310,8 +194,10 @@
     }
   </style>
 </head>
+
 <body>
-  <!-- NAVIGATION -->
+
+  <!-- NAV -->
   <nav id="navbar">
     <div class="nav-left">
       <span class="brand">Dylan Reid Media</span>
@@ -320,10 +206,11 @@
       <a href="#listen">Listen</a>
       <a href="#workwithme">Consulting</a>
     </div>
+
     <div class="toggle" id="modeToggle">Light / Dark</div>
-    <a class="cta" href="https://calendly.com/dylan-reid" 
-       style="margin-left: 24px; padding: 8px 18px; font-size: 13px; border-radius: 999px;">
-       Book a 30‑Minute Call
+
+    <a class="cta" href="https://calendly.com/dylan-reid">
+      Book a 30‑Minute Call
     </a>
   </nav>
 
@@ -331,22 +218,21 @@
   <section class="hero">
     <h1>Dylan Reid</h1>
     <h3>President, Dylan Reid Media</h3>
-    <p>AI Governance . Risk . Oversight . Responsible Deployment</p>
+    <p>AI Governance • Risk • Oversight • Responsible Deployment</p>
   </section>
 
   <!-- ABOUT -->
   <section id="about">
     <h2>About Me</h2>
+
     <div class="about">
       <img src="C4D87DB4-32D6-4447-87C0-2A28D69F317A.JPG" alt="Dylan Reid">
-      <div class="about-content">
+
+      <div>
         <p>
           I help healthcare and payer organizations adopt AI safely, responsibly, and in alignment
           with emerging regulatory frameworks. My work focuses on governance, risk assessment,
-          model oversight, and operational readiness for enterprise AI deployment. I also specialize in
-          prior authorization and reimbursement in the AI healthcare space, helping organizations
-          navigate the operational and regulatory complexities of integrating AI into clinical and
-          administrative workflows.
+          model oversight, and operational readiness for enterprise AI deployment.
         </p>
 
         <br>
@@ -360,55 +246,42 @@
     </div>
   </section>
 
-  <!-- MY WORK -->
+  <!-- WORK -->
   <section id="work">
     <h2>My Work</h2>
-    <div class="card">
-      <div class="card-content">
-        <p>
-          I create tools, writing, and analysis that help leaders navigate responsible AI, healthcare
-          innovation, and emerging regulatory landscapes.
-        </p>
 
-        <ul>
-          <li><strong>Book - </strong><a href="https://www.amazon.com/dp/BOFBLJRXPK" target="_blank">Hope Is Not a Strategy</a></li>
-          <li><strong>Newsletter - </strong>Monthly insights on model risk, oversight, and policy developments.</li>
-          <li><strong>Podcast - </strong>Long-form conversations on AI governance, healthcare, and policy.</li>
-          <li><strong>GitHub - </strong><a href="https://github.com/dylan199512" target="_blank">my GitHub</a></li>
-          <li><strong>Coding & prototypes - </strong>Governance dashboards, risk scoring tools, and bias analysis utilities.</li>
-          <li><strong>Policy & regulatory analysis - </strong>Clear explanations of AI legislation, healthcare rules, and compliance frameworks.</li>
-          <li><strong>Politics & society - </strong>How AI interacts with public policy, institutions, and democratic systems.</li>
-        </ul>
-      </div>
+    <div class="card">
+      <p>I create tools, writing, and analysis that help leaders navigate responsible AI.</p>
+
+      <ul style="margin-top: 16px; padding-left: 20px;">
+        <li><strong>Book —</strong> <a href="https://www.amazon.com/dp/BOFBLJRXPK">Hope Is Not a Strategy</a></li>
+        <li><strong>Newsletter —</strong> Monthly insights on AI governance and policy.</li>
+        <li><strong>Podcast —</strong> Conversations on AI, healthcare, and regulation.</li>
+        <li><strong>GitHub —</strong> <a href="https://github.com/dylan199512">my GitHub</a></li>
+      </ul>
+
       <div class="card-footer">
-        <a class="cta" href="https://github.com/dylan199512" target="_blank">Explore My Work</a>
+        <a class="cta" href="https://github.com/dylan199512">Explore My Work</a>
       </div>
     </div>
   </section>
 
-  <!-- LISTEN & SUBSCRIBE -->
+  <!-- LISTEN -->
   <section id="listen">
     <h2>Listen & Subscribe</h2>
+
     <div class="card">
-      <div class="card-content">
-        <p>Follow my work across platforms.</p>
-        <div class="platform-icons">
-          <a href="https://open.spotify.com/show/312TRzKHZrDA33dhyfPUPz" target="_blank">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/spotify.svg" alt="Spotify">
-          </a>
-          <a href="https://podcasts.apple.com/us/podcast/the-ai-healthcare-podcast/id1639882528" target="_blank">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/applepodcasts.svg" alt="Apple Podcasts">
-          </a>
-          <a href="https://substack.com/@aihealthcarethoughts" target="_blank">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/substack.svg" alt="Substack">
-          </a>
-          <a href="https://www.youtube.com/@TheAIHealthcarePodcast/videos" target="_blank">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube">
-          </a>
-        </div>
+      <p>Follow my work across platforms.</p>
+
+      <div style="display: flex; gap: 24px; margin-top: 24px;">
+        <a href="https://open.spotify.com/show/312TRzKHZrDA33dhyfPUPz">Spotify</a>
+        <a href="https://podcasts.apple.com/us/podcast/the-ai-healthcare-podcast/id1639882528">Apple</a>
+        <a href="https://substack.com/@aihealthcarethoughts">Substack</a>
+        <a href="https://www.youtube.com/@TheAIHealthcarePodcast/videos">YouTube</a>
       </div>
+
       <div class="card-footer">
-        <a class="cta" href="https://substack.com/@aihealthcarethoughts" target="_blank">Subscribe</a>
+        <a class="cta" href="https://substack.com/@aihealthcarethoughts">Subscribe</a>
       </div>
     </div>
   </section>
@@ -418,22 +291,20 @@
     <h2>Work With Me</h2>
 
     <div class="card">
-      <div class="card-content">
+      <div style="text-align: left;">
         <p>
           I help healthcare systems, payers, and AI‑driven organizations deploy artificial intelligence 
-          safely, responsibly, and in alignment with emerging regulatory frameworks. My consulting 
-          focuses on governance, risk assessment, workflow integration, and operational readiness 
-          for clinical and administrative AI tools.
+          safely, responsibly, and in alignment with emerging regulatory frameworks.
         </p>
 
         <br>
 
         <h3>What I Do</h3>
         <ul>
-          <li><strong>AI Governance & Regulatory Alignment</strong> — FDA‑aligned governance frameworks, HIPAA/GDPR compliance, and enterprise oversight structures.</li>
-          <li><strong>Clinical Workflow AI Evaluation</strong> — risk scoring, safety guardrails, and human‑in‑the‑loop design for clinical AI tools.</li>
-          <li><strong>Documentation & Prior Authorization Automation</strong> — strategy and evaluation for AI‑enabled documentation and administrative workflows.</li>
-          <li><strong>Model Oversight & Risk Assessment</strong> — bias analysis, error‑mode mapping, monitoring plans, and operational readiness assessments.</li>
+          <li>AI Governance & Regulatory Alignment</li>
+          <li>Clinical Workflow AI Evaluation</li>
+          <li>Documentation & Prior Authorization Automation</li>
+          <li>Model Oversight & Risk Assessment</li>
         </ul>
 
         <br>
@@ -443,6 +314,17 @@
           <li>Project‑based engagements (6–10 weeks)</li>
           <li>Advisory partnerships</li>
           <li>Executive briefings and leadership workshops</li>
+        </ul>
+
+        <br>
+
+        <h3>Who I Work With</h3>
+        <ul>
+          <li>Health systems</li>
+          <li>Payers</li>
+          <li>AI vendors</li>
+          <li>Policy organizations</li>
+          <li>Clinical operations teams</li>
         </ul>
 
         <p style="margin-top: 24px; font-weight: 500;">
@@ -462,195 +344,115 @@
     <h2>Consultation Intake Form</h2>
 
     <div class="card">
-      <div class="card-content">
-        <p>Please share a few details so I can prepare for our 30‑minute consultation.</p>
+      <p>Please share a few details so I can prepare for our call.</p>
 
-        <form id="intakeForm" action="https://formspree.io/f/mwkggpzy" method="POST" 
-              style="display: flex; flex-direction: column; gap: 16px; margin-top: 20px;">
+      <form id="intakeForm" action="https://formspree.io/f/mwkggpzy" method="POST"
+            style="display: flex; flex-direction: column; gap: 16px; margin-top: 20px;">
 
-          <!-- Hidden Source Tracking -->
-          <input type="hidden" name="source" id="sourceField" value="direct">
+        <input type="hidden" name="source" id="sourceField" value="direct">
 
-          <!-- Name -->
-          <label>
-            Your Name (required)
-            <input type="text" name="name" required 
-                   style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
-            <span class="error">Please enter your name.</span>
-          </label>
+        <label>
+          Your Name (required)
+          <input type="text" name="name" required>
+          <span class="error">Please enter your name.</span>
+        </label>
 
-          <!-- Email -->
-          <label>
-            Email Address (required)
-            <input type="email" name="email" required 
-                   style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
-            <span class="error">Please enter a valid email.</span>
-          </label>
+        <label>
+          Email Address (required)
+          <input type="email" name="email" required>
+          <span class="error">Please enter a valid email.</span>
+        </label>
 
-          <!-- Organization -->
-          <label>
-            Organization (optional)
-            <input type="text" name="organization" 
-                   style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
-          </label>
+        <label>
+          Organization (optional)
+          <input type="text" name="organization">
+        </label>
 
-          <!-- Topic -->
-          <label>
-            What would you like help with? (required)
-            <select name="topic" required 
-                    style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
-              <option value="">Select one...</option>
-              <option value="AI Governance">AI Governance</option>
-              <option value="Clinical Workflow AI">Clinical Workflow AI</option>
-              <option value="Documentation Automation">Documentation / Prior Authorization</option>
-              <option value="Model Oversight & Risk">Model Oversight & Risk Assessment</option>
-              <option value="Other">Other</option>
-            </select>
-            <span class="error">Please select a topic.</span>
-          </label>
+        <label>
+          What would you like help with? (required)
+          <select name="topic" required>
+            <option value="">Select one...</option>
+            <option value="AI Governance">AI Governance</option>
+            <option value="Clinical Workflow AI">Clinical Workflow AI</option>
+            <option value="Documentation Automation">Documentation / Prior Authorization</option>
+            <option value="Model Oversight & Risk">Model Oversight & Risk Assessment</option>
+            <option value="Other">Other</option>
+          </select>
+          <span class="error">Please select a topic.</span>
+        </label>
 
-          <!-- How did you hear about me? -->
-          <label>
-            How did you hear about me?
-            <select name="referral" 
-                    style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
-              <option value="">Select one...</option>
-              <option value="LinkedIn">LinkedIn</option>
-              <option value="Podcast">Podcast</option>
-              <option value="Substack">Substack</option>
-              <option value="Google Search">Google Search</option>
-              <option value="Referral">Referral</option>
-              <option value="Other">Other</option>
-            </select>
-          </label>
+        <label>
+          How did you hear about me?
+          <select name="referral">
+            <option value="">Select one...</option>
+            <option value="LinkedIn">LinkedIn</option>
+            <option value="Podcast">Podcast</option>
+            <option value="Substack">Substack</option>
+            <option value="Google Search">Google Search</option>
+            <option value="Referral">Referral</option>
+            <option value="Other">Other</option>
+          </select>
+        </label>
 
-          <!-- NDA Checkbox -->
-          <label style="display: flex; align-items: center; gap: 8px; margin-top: 8px;">
-            <input type="checkbox" name="nda_needed" value="Yes">
-            I may need an NDA for this discussion
-          </label>
+        <label style="display: flex; align-items: center; gap: 8px;">
+          <input type="checkbox" name="nda_needed" value="Yes">
+          I may need an NDA for this discussion
+        </label>
 
-          <!-- Message -->
-          <label>
-            Briefly describe your goals (optional)
-            <textarea name="message" rows="4" 
-                      style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;"></textarea>
-          </label>
+        <label>
+          Briefly describe your goals (optional)
+          <textarea name="message" rows="4"></textarea>
+        </label>
 
-          <!-- Submit -->
-          <div class="card-footer" style="justify-content: flex-start;">
-            <button type="submit" class="cta">Submit Intake Form</button>
-          </div>
+        <div class="card-footer" style="justify-content: flex-start;">
+          <button type="submit" class="cta">Submit Intake Form</button>
+        </div>
 
-          <!-- Success Message -->
-          <p id="successMessage" style="color: green; display: none; margin-top: 12px;">
-            Thank you — your intake form has been submitted successfully!
-          </p>
+        <p id="successMessage" style="color: green; display: none;">
+          Thank you — your intake form has been submitted successfully!
+        </p>
 
-        </form>
-      </div>
+      </form>
     </div>
   </section>
 
-  <!-- SCHEDULE -->
+  <!-- CALENDLY -->
   <section id="schedule">
     <h2>Schedule a 30‑Minute Consultation</h2>
 
     <div class="card">
-      <div class="card-content">
-        <p>Book a free 30‑minute consultation directly on my calendar.</p>
+      <p>Book a free 30‑minute consultation directly on my calendar.</p>
 
-        <div style="min-width:320px;height:700px;">
-          <iframe 
-            src="https://calendly.com/dylan-reid?hide_gdpr_banner=1" 
-            width="100%" 
-            height="100%" 
-            frameborder="0">
-          </iframe>
-        </div>
+      <div style="min-width:320px;height:700px;">
+        <iframe 
+          src="https://calendly.com/dylan-reid?hide_gdpr_banner=1"
+          width="100%" height="100%" frameborder="0">
+        </iframe>
       </div>
     </div>
   </section>
 
   <footer>
-    © 2026 Dylan Reid Media - All Rights Reserved
+    © 2026 Dylan Reid Media — All Rights Reserved
   </footer>
 
   <script>
-    /*
-    NAV SHRINK ON SCROLL
-    */
     const navbar = document.getElementById("navbar");
     window.addEventListener("scroll", () => {
       if (window.scrollY > 50) navbar.classList.add("scrolled");
       else navbar.classList.remove("scrolled");
     });
 
-    /*
-    DARK MODE TOGGLE
-    */
     const toggle = document.getElementById("modeToggle");
     const body = document.body;
-    if (localStorage.getItem("theme") === "dark") {
-      body.classList.add("dark");
-    }
+    if (localStorage.getItem("theme") === "dark") body.classList.add("dark");
     toggle.addEventListener("click", () => {
       body.classList.toggle("dark");
       localStorage.setItem("theme", body.classList.contains("dark") ? "dark" : "light");
     });
 
-    /*
-    RIPPLE EFFECT
-    */
-    document.querySelectorAll('.cta').forEach(button => {
-      button.addEventListener('click', function (e) {
-        const circle = document.createElement('span');
-        const diameter = Math.max(button.clientWidth, button.clientHeight);
-        const radius = diameter / 2;
-
-        circle.style.width = circle.style.height = `${diameter}px`;
-        circle.style.left = `${e.clientX - button.offsetLeft - radius}px`;
-        circle.style.top = `${e.clientY - button.offsetTop - radius}px`;
-        circle.classList.add('ripple');
-
-        const ripple = button.getElementsByClassName('ripple')[0];
-        if (ripple) ripple.remove();
-
-        button.appendChild(circle);
-      });
-    });
-
-    /*
-    SECTION FADE-IN ON SCROLL
-    */
-    const sections = document.querySelectorAll("section");
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add("visible");
-      });
-    }, { threshold: 0.2 });
-    sections.forEach(section => observer.observe(section));
-
-    /*
-    PLATFORM ICON STAGGER ANIMATION
-    */
-    document.addEventListener("DOMContentLoaded", () => {
-      const icons = document.querySelectorAll(".platform-icons a");
-      icons.forEach((icon, i) => {
-        setTimeout(() => {
-          icon.style.opacity = "1";
-          icon.style.transform = "translateY(0)";
-        }, 150 * i);
-      });
-    });
-
-    /*
-    INTAKE FORM LOGIC
-    */
-    // Track source (referrer)
     document.getElementById("sourceField").value = document.referrer || "direct";
 
-    // Validation + Success Message
     document.getElementById("intakeForm").addEventListener("submit", function (e) {
       const form = e.target;
       let valid = true;
@@ -670,13 +472,21 @@
         return;
       }
 
-      // Show success message after submission
       setTimeout(() => {
         const success = document.getElementById("successMessage");
         if (success) success.style.display = "block";
       }, 500);
     });
+
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("visible");
+      });
+    }, { threshold: 0.2 });
+    sections.forEach(section => observer.observe(section));
   </script>
+
 </body>
 </html>
 
