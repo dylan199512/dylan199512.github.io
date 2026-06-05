@@ -22,7 +22,6 @@
       color: #F5F5F2;
     }
 
-    /* NAV */
     nav {
       position: fixed;
       top: 0;
@@ -65,7 +64,6 @@
 
     .toggle:hover { opacity: 1; }
 
-    /* HERO */
     .hero {
       text-align: center;
       padding: 180px 20px 140px;
@@ -75,7 +73,6 @@
     .hero h3 { font-size: 18px; opacity: 0.8; margin-bottom: 12px; }
     .hero p { font-size: 20px; opacity: 0.8; }
 
-    /* SECTIONS */
     section {
       max-width: 900px;
       margin: 80px auto;
@@ -123,7 +120,6 @@
       transform: scaleX(1);
     }
 
-    /* CARDS */
     .card {
       background: white;
       border-radius: 16px;
@@ -144,7 +140,6 @@
       margin-top: 24px;
     }
 
-    /* CTA */
     .cta {
       padding: 12px 24px;
       background: #111111;
@@ -163,7 +158,6 @@
       color: #111111;
     }
 
-    /* ABOUT */
     .about {
       display: flex;
       flex-direction: column;
@@ -184,7 +178,6 @@
       }
     }
 
-    /* SOCIAL ICONS */
     .platform-icons {
       display: flex;
       gap: 24px;
@@ -222,14 +215,6 @@
       filter: invert(0);
     }
 
-    /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 60px 0;
-      opacity: 0.6;
-      font-size: 14px;
-    }
-
     .error {
       color: red;
       font-size: 13px;
@@ -240,7 +225,6 @@
 
 <body>
 
-  <!-- NAV -->
   <nav id="navbar">
     <div class="nav-left">
       <span class="brand">Dylan Reid Media</span>
@@ -253,14 +237,12 @@
     <div class="toggle" id="modeToggle">Light / Dark</div>
   </nav>
 
-  <!-- HERO -->
   <section class="hero">
     <h1>Dylan Reid</h1>
     <h3>President, Dylan Reid Media</h3>
     <p>AI Governance • Risk • Oversight • Responsible Deployment</p>
   </section>
 
-  <!-- ABOUT -->
   <section id="about">
     <h2>About Me</h2>
 
@@ -285,7 +267,6 @@
     </div>
   </section>
 
-  <!-- WORK -->
   <section id="work">
     <h2>My Work</h2>
 
@@ -305,7 +286,6 @@
     </div>
   </section>
 
-  <!-- LISTEN -->
   <section id="listen">
     <h2>Listen & Subscribe</h2>
 
@@ -337,8 +317,6 @@
       </div>
     </div>
   </section>
-
-  <!-- WORK WITH ME -->
   <section id="workwithme">
     <h2>Work With Me</h2>
 
@@ -391,7 +369,6 @@
     </div>
   </section>
 
-  <!-- INTAKE FORM -->
   <section id="intake">
     <h2>Consultation Intake Form</h2>
 
@@ -468,7 +445,6 @@
     </div>
   </section>
 
-  <!-- CALENDLY -->
   <section id="schedule">
     <h2>Schedule a 30‑Minute Consultation</h2>
 
@@ -483,28 +459,38 @@
       </div>
     </div>
   </section>
-
   <footer>
     © 2026 Dylan Reid Media — All Rights Reserved
   </footer>
 
   <script>
+    // Navbar scroll effect
     const navbar = document.getElementById("navbar");
     window.addEventListener("scroll", () => {
       if (window.scrollY > 50) navbar.classList.add("scrolled");
       else navbar.classList.remove("scrolled");
     });
 
+    // Dark / Light mode toggle
     const toggle = document.getElementById("modeToggle");
     const body = document.body;
-    if (localStorage.getItem("theme") === "dark") body.classList.add("dark");
+
+    if (localStorage.getItem("theme") === "dark") {
+      body.classList.add("dark");
+    }
+
     toggle.addEventListener("click", () => {
       body.classList.toggle("dark");
-      localStorage.setItem("theme", body.classList.contains("dark") ? "dark" : "light");
+      localStorage.setItem(
+        "theme",
+        body.classList.contains("dark") ? "dark" : "light"
+      );
     });
 
+    // Capture referral source
     document.getElementById("sourceField").value = document.referrer || "direct";
 
+    // Intake form validation + success message
     document.getElementById("intakeForm").addEventListener("submit", function (e) {
       const form = e.target;
       let valid = true;
@@ -530,15 +516,8 @@
       }, 500);
     });
 
+    // Section fade‑in animation
     const sections = document.querySelectorAll("section");
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add("visible");
-      });
-    }, { threshold: 0.2 });
-
-    sections.forEach(section => observer.observe(section));
-  </script>
-
-</body>
-</html>
+        if (entry.isIntersecting) entry.target.class
