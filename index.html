@@ -22,6 +22,7 @@
       color: #F5F5F2;
     }
 
+    /* NAV */
     nav {
       position: fixed;
       top: 0;
@@ -64,6 +65,7 @@
 
     .toggle:hover { opacity: 1; }
 
+    /* HERO */
     .hero {
       text-align: center;
       padding: 180px 20px 140px;
@@ -73,6 +75,7 @@
     .hero h3 { font-size: 18px; opacity: 0.8; margin-bottom: 12px; }
     .hero p { font-size: 20px; opacity: 0.8; }
 
+    /* SECTIONS */
     section {
       max-width: 900px;
       margin: 80px auto;
@@ -120,6 +123,7 @@
       transform: scaleX(1);
     }
 
+    /* CARDS */
     .card {
       background: white;
       border-radius: 16px;
@@ -140,6 +144,7 @@
       margin-top: 24px;
     }
 
+    /* CTA */
     .cta {
       padding: 12px 24px;
       background: #111111;
@@ -149,8 +154,6 @@
       font-weight: 600;
       font-size: 14px;
       letter-spacing: 0.03em;
-      position: relative;
-      overflow: hidden;
       cursor: pointer;
       display: inline-block;
     }
@@ -160,6 +163,7 @@
       color: #111111;
     }
 
+    /* ABOUT */
     .about {
       display: flex;
       flex-direction: column;
@@ -180,6 +184,45 @@
       }
     }
 
+    /* SOCIAL ICONS */
+    .platform-icons {
+      display: flex;
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    .platform-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #111111;
+      transition: transform 0.2s ease, background 0.2s ease;
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    body.dark .platform-icons a {
+      background: #F5F5F2;
+    }
+
+    .platform-icons a:hover {
+      transform: translateY(-4px);
+    }
+
+    .platform-icons img {
+      width: 22px;
+      height: 22px;
+      filter: invert(1);
+    }
+
+    body.dark .platform-icons img {
+      filter: invert(0);
+    }
+
+    /* FOOTER */
     footer {
       text-align: center;
       padding: 60px 0;
@@ -208,6 +251,7 @@
     </div>
 
     <div class="toggle" id="modeToggle">Light / Dark</div>
+  </nav>
 
   <!-- HERO -->
   <section class="hero">
@@ -262,94 +306,84 @@
   </section>
 
   <!-- LISTEN -->
-<section id="listen">
-  <h2>Listen & Subscribe</h2>
+  <section id="listen">
+    <h2>Listen & Subscribe</h2>
 
-  <div class="card">
-    <div class="card-content">
-      <p>Follow my work across platforms.</p>
+    <div class="card">
+      <div class="card-content">
+        <p>Follow my work across platforms.</p>
 
-      <div class="platform-icons">
-        <a href="https://open.spotify.com/show/312TRzKHZrDA33dhyfPUPz" target="_blank">
-          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/spotify.svg" alt="Spotify">
-        </a>
+        <div class="platform-icons">
+          <a href="https://open.spotify.com/show/312TRzKHZrDA33dhyfPUPz" target="_blank">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/spotify.svg" alt="Spotify">
+          </a>
 
-        <a href="https://podcasts.apple.com/us/podcast/the-ai-healthcare-podcast/id1639882528" target="_blank">
-          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/applepodcasts.svg" alt="Apple Podcasts">
-        </a>
+          <a href="https://podcasts.apple.com/us/podcast/the-ai-healthcare-podcast/id1639882528" target="_blank">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/applepodcasts.svg" alt="Apple Podcasts">
+          </a>
 
-        <a href="https://substack.com/@aihealthcarethoughts" target="_blank">
-          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/substack.svg" alt="Substack">
-        </a>
+          <a href="https://substack.com/@aihealthcarethoughts" target="_blank">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/substack.svg" alt="Substack">
+          </a>
 
-        <a href="https://www.youtube.com/@TheAIHealthcarePodcast/videos" target="_blank">
-          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube">
-        </a>
+          <a href="https://www.youtube.com/@TheAIHealthcarePodcast/videos" target="_blank">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube">
+          </a>
+        </div>
+      </div>
+
+      <div class="card-footer">
+        <a class="cta" href="https://substack.com/@aihealthcarethoughts" target="_blank">Subscribe</a>
       </div>
     </div>
-
-    <div class="card-footer">
-      <a class="cta" href="https://substack.com/@aihealthcarethoughts" target="_blank">Subscribe</a>
-    </div>
-  </div>
-</section>
-
-
+  </section>
 
   <!-- WORK WITH ME -->
   <section id="workwithme">
-  <h2>Work With Me</h2>
+    <h2>Work With Me</h2>
 
-  <div class="card">
-    <div class="card-content" style="text-align: left;">
-      <p>
-        I help healthcare systems, payers, and AI‑driven organizations deploy artificial intelligence 
-        safely, responsibly, and in alignment with emerging regulatory frameworks. My consulting 
-        focuses on governance, risk assessment, workflow integration, and operational readiness 
-        for clinical and administrative AI tools.
-      </p>
+    <div class="card">
+      <div style="text-align: left;">
+        <p>
+          I help healthcare systems, payers, and AI‑driven organizations deploy artificial intelligence 
+          safely, responsibly, and in alignment with emerging regulatory frameworks.
+        </p>
 
-      <br>
+        <br>
 
-      <h3>What I Do</h3>
-      <ul>
-        <li>AI Governance & Regulatory Alignment</li>
-        <li>Clinical Workflow AI Evaluation</li>
-        <li>Documentation & Prior Authorization Automation</li>
-        <li>Model Oversight & Risk Assessment</li>
-      </ul>
+        <h3>What I Do</h3>
+        <ul>
+          <li>AI Governance & Regulatory Alignment</li>
+          <li>Clinical Workflow AI Evaluation</li>
+          <li>Documentation & Prior Authorization Automation</li>
+          <li>Model Oversight & Risk Assessment</li>
+        </ul>
 
-      <br>
+        <br>
 
-      <h3>How I Work</h3>
-      <ul>
-        <li>Project‑based engagements (6–10 weeks)</li>
-        <li>Advisory partnerships</li>
-        <li>Executive briefings and leadership workshops</li>
-      </ul>
+        <h3>How I Work</h3>
+        <ul>
+          <li>Project‑based engagements (6–10 weeks)</li>
+          <li>Advisory partnerships</li>
+          <li>Executive briefings and leadership workshops</li>
+        </ul>
 
-      <br>
+        <br>
 
-      <h3>Who I Work With</h3>
-      <ul>
-        <li>Health systems</li>
-        <li>Payers</li>
-        <li>AI vendors</li>
-        <li>Policy organizations</li>
-        <li>Clinical operations teams</li>
-      </ul>
+        <h3>Who I Work With</h3>
+        <ul>
+          <li>Health systems</li>
+          <li>Payers</li>
+          <li>AI vendors</li>
+          <li>Policy organizations</li>
+          <li>Clinical operations teams</li>
+        </ul>
 
-      <p style="margin-top: 24px; font-weight: 500;">
-        I offer a free 30‑minute consultation to understand your goals and determine whether my 
-        approach is a good fit for your organization.
-      </p>
-    </div> <!-- closes card-content -->
-
-    <div class="card-footer">
-      <a class="cta" href="#intake">Book a 30‑Minute Call</a>
-    </div>
-  </div> <!-- closes card -->
-</section>
+        <p style="margin-top: 24px; font-weight: 500;">
+          I offer a free 30‑minute consultation to understand your goals and determine whether my 
+          approach is a good fit for your organization.
+        </p>
+      </div>
 
       <div class="card-footer">
         <a class="cta" href="#intake">Book a 30‑Minute Call</a>
@@ -501,13 +535,7 @@
       entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add("visible");
       });
-    }, { threshold: 0.2 });
-    sections.forEach(section => observer.observe(section));
-  </script>
-
-</body>
-</html>
-
+    },
 
 
 
