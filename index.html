@@ -9,7 +9,6 @@
   <meta property="og:title" content="Dylan Reid Media">
   <meta property="og:description" content="AI governance for reimbursement and prior authorization.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="YOUR_IMAGE_URL_HERE">
 
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -17,18 +16,27 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
+    /* GLOBAL TYPOGRAPHY */
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
       Roboto, Helvetica, Arial, sans-serif;
       background: #F5F5F2;
       color: #111;
-      line-height: 1.6;
+      line-height: 1.75;
       transition: background 0.3s ease, color 0.3s ease;
     }
 
     body.dark {
       background: #111;
       color: #F5F5F2;
+    }
+
+    p { margin-bottom: 20px; }
+    ul li { margin-bottom: 12px; }
+
+    h3 {
+      margin-top: 28px;
+      margin-bottom: 12px;
     }
 
     /* NAVBAR */
@@ -91,7 +99,7 @@
     /* SECTION WRAPPER */
     section {
       max-width: 900px;
-      margin: 80px auto;
+      margin: 40px auto;
       padding: 0 20px;
       opacity: 0;
       transform: translateY(30px);
@@ -101,6 +109,28 @@
     section.visible {
       opacity: 1;
       transform: translateY(0);
+    }
+
+    /* SECTION TITLES */
+    section h2 {
+      font-size: 32px;
+      margin-bottom: 24px;
+      position: relative;
+    }
+
+    /* SUBTLE GRAY UNDERLINE */
+    section h2::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 50px;
+      height: 2px;
+      background: rgba(0,0,0,0.15);
+    }
+
+    body.dark section h2::after {
+      background: rgba(255,255,255,0.25);
     }
 
     /* WHITE CARD FOR EVERY SECTION */
@@ -114,22 +144,6 @@
     body.dark .section-card {
       background: #1A1A1A;
       box-shadow: 0 4px 20px rgba(255,255,255,0.06);
-    }
-
-    section h2 {
-      font-size: 32px;
-      margin-bottom: 24px;
-      position: relative;
-    }
-
-    section h2::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -6px;
-      width: 60px;
-      height: 3px;
-      background: #0A84FF;
     }
 
     /* ABOUT */
@@ -216,29 +230,37 @@
 
     html { scroll-behavior: smooth; }
 
-    /* MOBILE RESPONSIVENESS */
+    /* MOBILE TYPOGRAPHY + SPACING */
     @media (max-width: 700px) {
 
+      body {
+        line-height: 1.8;
+      }
+
+      p {
+        margin-bottom: 18px;
+      }
+
+      ul li {
+        margin-bottom: 10px;
+      }
+
       section {
-        margin: 48px auto;
+        margin: 32px auto;
       }
 
       .section-card {
         padding: 24px;
       }
 
-      .hero {
-        padding: 140px 20px 80px;
-      }
-
       section h2 {
         font-size: 26px;
-        margin-bottom: 16px;
+        margin-bottom: 20px;
       }
 
       h3 {
-        font-size: 20px;
-        margin-top: 20px;
+        margin-top: 24px;
+        margin-bottom: 10px;
       }
 
       .about img {
@@ -248,10 +270,6 @@
 
       nav {
         padding: 16px 20px;
-      }
-
-      ul li {
-        margin-bottom: 8px;
       }
 
       .platform-icons {
@@ -285,7 +303,6 @@
   <!-- HERO -->
   <section class="hero">
     <h1>Dylan Reid</h1>
-    <h2>President, Dylan Reid Media</h2>
     <p>AI governance for reimbursement and prior authorization.</p>
     <p>I help health systems, payers, and policy teams govern AI with CMS‑aligned clarity and risk frameworks.</p>
   </section>
@@ -322,15 +339,13 @@
 
       <p>I create tools, writing, and analysis that help leaders navigate responsible AI.</p>
 
-      <ul style="margin-top: 16px; padding-left: 20px;">
+      <ul style="padding-left: 20px;">
         <li><strong>Book —</strong> <a href="https://www.amazon.com/dp/B0FBSY1V19">Hope Is Not a Strategy</a></li>
         <li><strong>Newsletter —</strong> Monthly insights on AI governance and policy.</li>
         <li><strong>Podcast —</strong> Conversations on AI, healthcare, and regulation.</li>
       </ul>
 
-      <div style="margin-top: 24px;">
-        <a class="cta" href="https://substack.com/@aihealthcarethoughts" target="_blank">Explore My Work</a>
-      </div>
+      <a class="cta" href="https://substack.com/@aihealthcarethoughts" target="_blank">Explore My Work</a>
     </div>
   </section>
 
@@ -350,9 +365,7 @@
         <a href="https://github.com/dylan199512" target="_blank"><i class="fa-brands fa-github"></i></a>
       </div>
 
-      <div style="margin-top: 24px;">
-        <a class="cta" href="https://substack.com/@aihealthcarethoughts" target="_blank">Subscribe</a>
-      </div>
+      <a class="cta" href="https://substack.com/@aihealthcarethoughts" target="_blank">Subscribe</a>
     </div>
   </section>
 
@@ -404,9 +417,7 @@
         <li>Communication guidance for stakeholders</li>
       </ul>
 
-      <p style="margin-top: 16px;">
-        <a href="#schedule">Schedule a call</a> to discuss your needs.
-      </p>
+      <p><a href="#schedule">Schedule a call</a> to discuss your needs.</p>
     </div>
   </section>
 
@@ -460,9 +471,7 @@
         I might need an NDA for this
       </label>
 
-      <div style="margin-top: 24px;">
-        <button class="cta" id="scheduleBtn">Continue to Calendly</button>
-      </div>
+      <button class="cta" id="scheduleBtn">Continue to Calendly</button>
     </div>
   </section>
 
@@ -517,12 +526,11 @@
       const emailBody = `Help needed: ${help}%0D%0ANDA required: ${nda}`;
       const mailtoLink = `mailto:dylan@dylan-reid.com?subject=Scheduling a Call&body=${emailBody}`;
 
-      const link = document.createElement("a");
-      link.href = mailtoLink;
-      link.click();
+      window.location.href = mailtoLink;
     });
   </script>
 
 </body>
 </html>
+
 
