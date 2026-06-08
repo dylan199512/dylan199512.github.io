@@ -13,10 +13,12 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+ <style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* GLOBAL TYPOGRAPHY + PREMIUM TYPE SCALE */
+/* -----------------------------------------------------
+   GLOBAL TYPOGRAPHY + PREMIUM TYPE SCALE
+----------------------------------------------------- */
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Helvetica, Arial, sans-serif;
@@ -27,7 +29,6 @@ body {
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* HEADINGS */
 h1 {
   font-size: 48px;
   line-height: 1.2;
@@ -48,7 +49,9 @@ h3 {
   margin-bottom: 12px;
 }
 
-/* FOOTER */
+p { margin-bottom: 20px; }
+ul li { margin-bottom: 12px; }
+
 footer {
   font-size: 15px;
   opacity: 0.85;
@@ -60,148 +63,166 @@ body.dark {
   color: #F5F5F2;
 }
 
-/* TEXT SPACING */
-p {
-  margin-bottom: 20px;
+
+/* -----------------------------------------------------
+   NAVBAR
+----------------------------------------------------- */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 24px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: padding 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1000;
+  background: transparent;
 }
 
-ul li {
+nav.scrolled {
+  background: #111;
+  padding: 14px 40px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+nav a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+nav a:hover { opacity: 0.6; }
+
+.toggle {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+
+/* -----------------------------------------------------
+   HERO
+----------------------------------------------------- */
+.hero {
+  text-align: center;
+  padding: 200px 20px 200px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: 700;
   margin-bottom: 12px;
 }
 
+.hero p {
+  font-size: 20px;
+  opacity: 0.8;
+}
 
-    /* NAVBAR */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      padding: 24px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: padding 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
-      z-index: 1000;
-      background: transparent;
-    }
 
-    nav.scrolled {
-      background: #111;
-      padding: 14px 40px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
-    }
+/* -----------------------------------------------------
+   SECTION WRAPPER
+----------------------------------------------------- */
+section {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.7s ease;
+}
 
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 32px;
-    }
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-    nav a {
-      text-decoration: none;
-      color: inherit;
-      font-weight: 500;
-      transition: opacity 0.2s ease;
-    }
-
-    nav a:hover { opacity: 0.6; }
-
-    .toggle {
-      cursor: pointer;
-      opacity: 0.8;
-    }
-
-    /* HERO */
-    .hero {
-      text-align: center;
-      padding: 200px 20px 200px;
-    }
-
-    .hero h1 {
-      font-size: 48px;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-
-    .hero p {
-      font-size: 20px;
-      opacity: 0.8;
-    }
-
-    /* SECTION WRAPPER */
-    section {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.7s ease;
-    }
-
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-  /* SECTION TITLES */
 section h2 {
   font-size: 32px;
   margin-bottom: 24px;
   position: relative;
 }
 
-/* REMOVE UNDERLINE COMPLETELY */
 section h2::after {
   display: none;
 }
 
 
-    /* WHITE CARD FOR EVERY SECTION */
-    .section-card {
+/* -----------------------------------------------------
+   SECTION CARD
+----------------------------------------------------- */
+.section-card {
   background: white;
   border-radius: 16px;
   padding: 40px;
+  margin: 48px auto;
   box-shadow:
     0 2px 6px rgba(0,0,0,0.03),
     0 12px 32px rgba(0,0,0,0.04);
 }
 
+body.dark .section-card {
+  background: #1A1A1A;
+  box-shadow: 0 4px 20px rgba(255,255,255,0.06);
+}
 
-    body.dark .section-card {
-      background: #1A1A1A;
-      box-shadow: 0 4px 20px rgba(255,255,255,0.06);
-    }
+.section-card ul li {
+  margin-bottom: 16px;
+}
 
-    /* ABOUT */
-    .about {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
+.section-card .cta {
+  margin-top: 24px;
+}
 
-    .about img {
-      width: 220px;
-      height: 220px;
-      border-radius: 16px;
-      object-fit: cover;
-    }
 
-    @media (min-width: 700px) {
-      .about {
-        flex-direction: row;
-        align-items: center;
-      }
-    }
-/* PLATFORM ICONS */
+/* -----------------------------------------------------
+   ABOUT
+----------------------------------------------------- */
+.about-section {
+  padding: 80px 0;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.about img {
+  width: 220px;
+  height: 220px;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.about-text {
+  max-width: 600px;
+}
+
+@media (min-width: 700px) {
+  .about {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+
+/* -----------------------------------------------------
+   PLATFORM ICONS
+----------------------------------------------------- */
 .platform-icons {
   display: flex;
   gap: 24px;
   margin-top: 24px;
   margin-bottom: 24px;
   flex-wrap: wrap;
-}
-
-.section-card .cta {
-  margin-top: 8px;
 }
 
 .platform-icons a {
@@ -218,92 +239,136 @@ section h2::after {
 }
 
 
-    /* BUTTON */
-    .cta {
-      padding: 12px 24px;
-      background: #111;
-      color: white;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 600;
-      display: inline-block;
-      transition: opacity 0.2s ease;
-    }
+/* -----------------------------------------------------
+   LISTEN & SUBSCRIBE
+----------------------------------------------------- */
+.subscribe-icons {
+  margin-top: 24px;
+}
 
-    .cta:hover { opacity: 0.8; }
 
-    body.dark .cta {
-      background: #F5F5F2;
-      color: #111;
-    }
+/* -----------------------------------------------------
+   CTA BUTTON
+----------------------------------------------------- */
+.cta {
+  padding: 12px 24px;
+  background: #111;
+  color: white;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  transition: opacity 0.2s ease;
+}
 
-    /* CALENDLY */
-    #calendly { display: none; }
-    #calendly.visible { display: block; }
+.cta:hover { opacity: 0.8; }
 
-    footer {
-      margin-top: 120px;
-      padding: 40px 20px;
-      text-align: center;
-      opacity: 0.7;
-      font-size: 14px;
-    }
+body.dark .cta {
+  background: #F5F5F2;
+  color: #111;
+}
 
-    html { scroll-behavior: smooth; }
 
-    /* MOBILE TYPOGRAPHY + SPACING */
-    @media (max-width: 700px) {
+/* -----------------------------------------------------
+   SERVICES
+----------------------------------------------------- */
+.services-section {
+  padding: 80px 0;
+}
 
-      body {
-        line-height: 1.8;
-      }
+.services h3 {
+  margin-top: 36px;
+}
 
-      p {
-        margin-bottom: 18px;
-      }
 
-      ul li {
-        margin-bottom: 10px;
-      }
+/* -----------------------------------------------------
+   SCHEDULE FORM
+----------------------------------------------------- */
+.schedule-form > * {
+  margin-bottom: 20px;
+}
 
-      section {
-        margin: 32px auto;
-      }
+.schedule-card {
+  box-shadow:
+    0 2px 6px rgba(0,0,0,0.03),
+    0 12px 32px rgba(0,0,0,0.04);
+  padding: 40px;
+  border-radius: 16px;
+}
 
-      .section-card {
-        padding: 24px;
-      }
 
-      section h2 {
-        font-size: 26px;
-        margin-bottom: 20px;
-      }
+/* -----------------------------------------------------
+   FOOTER
+----------------------------------------------------- */
+footer {
+  margin-top: 120px;
+  padding: 40px 20px;
+  text-align: center;
+  opacity: 0.7;
+  font-size: 14px;
+}
 
-      h3 {
-        margin-top: 24px;
-        margin-bottom: 10px;
-      }
 
-      .about img {
-        width: 140px;
-        height: 140px;
-      }
+/* -----------------------------------------------------
+   MOBILE TYPOGRAPHY + SPACING
+----------------------------------------------------- */
+@media (max-width: 700px) {
 
-      nav {
-        padding: 16px 20px;
-      }
+  body {
+    line-height: 1.8;
+  }
 
-      .platform-icons {
-        gap: 16px;
-      }
+  p {
+    margin-bottom: 18px;
+  }
 
-      .platform-icons a {
-        width: 36px;
-        height: 36px;
-        font-size: 18px;
-      }
-    }
-  </style>
+  ul li {
+    margin-bottom: 10px;
+  }
+
+  section {
+    margin: 32px auto;
+  }
+
+  .section-card {
+    padding: 24px;
+  }
+
+  section h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    margin-top: 24px;
+    margin-bottom: 10px;
+  }
+
+  .about img {
+    width: 140px;
+    height: 140px;
+  }
+
+  nav {
+    padding: 16px 20px;
+  }
+
+  .platform-icons {
+    gap: 16px;
+  }
+
+  .platform-icons a {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+}
+
+html { scroll-behavior: smooth; }
+#calendly { display: none; }
+#calendly.visible { display: block; }
+</style>
+
 </head>
 
 <body>
