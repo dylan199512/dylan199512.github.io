@@ -111,27 +111,18 @@
       transform: translateY(0);
     }
 
-    /* SECTION TITLES */
-    section h2 {
-      font-size: 32px;
-      margin-bottom: 24px;
-      position: relative;
-    }
+  /* SECTION TITLES */
+section h2 {
+  font-size: 32px;
+  margin-bottom: 24px;
+  position: relative;
+}
 
-    /* SUBTLE GRAY UNDERLINE */
-    section h2::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -10px;
-      width: 50px;
-      height: 2px;
-      background: rgba(0,0,0,0.15);
-    }
+/* REMOVE UNDERLINE COMPLETELY */
+section h2::after {
+  display: none;
+}
 
-    body.dark section h2::after {
-      background: rgba(255,255,255,0.25);
-    }
 
     /* WHITE CARD FOR EVERY SECTION */
     .section-card {
