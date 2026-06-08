@@ -16,20 +16,34 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    /* GLOBAL TYPOGRAPHY */
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-      Roboto, Helvetica, Arial, sans-serif;
-      background: #F5F5F2;
-      color: #111;
-      line-height: 1.75;
-      transition: background 0.3s ease, color 0.3s ease;
-    }
+/* GLOBAL TYPOGRAPHY + PREMIUM TYPE SCALE */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+  Roboto, Helvetica, Arial, sans-serif;
+  background: #F5F5F2;
+  color: #111;
+  line-height: 1.75;
+  font-size: 18px; /* added */
+  transition: background 0.3s ease, color 0.3s ease;
+}
 
-    body.dark {
-      background: #111;
-      color: #F5F5F2;
-    }
+h2 {
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 22px;
+}
+
+footer {
+  font-size: 15px;
+}
+
+body.dark {
+  background: #111;
+  color: #F5F5F2;
+}
+
 
     p { margin-bottom: 20px; }
     ul li { margin-bottom: 12px; }
@@ -82,7 +96,7 @@
     /* HERO */
     .hero {
       text-align: center;
-      padding: 180px 20px 140px;
+      padding: 180px 20px 180px;
     }
 
     .hero h1 {
@@ -129,7 +143,7 @@ section h2::after {
       background: white;
       border-radius: 16px;
       padding: 40px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+       box-shadow: 0 8px 32px rgba(0,0,0,0.04);
     }
 
     body.dark .section-card {
@@ -145,8 +159,8 @@ section h2::after {
     }
 
     .about img {
-      width: 180px;
-      height: 180px;
+      width: 200px;
+      height: 200px;
       border-radius: 12px;
       object-fit: cover;
     }
