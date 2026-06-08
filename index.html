@@ -4,6 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dylan Reid Media</title>
+  <!-- SEO + Social Metadata -->
+<meta name="description" content="AI governance for reimbursement and prior authorization.">
+<meta property="og:title" content="Dylan Reid Media">
+<meta property="og:description" content="AI governance for reimbursement and prior authorization.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="YOUR_IMAGE_URL_HERE">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="favicon.png">
+
+
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -21,9 +32,56 @@
     }
 
     body.dark {
-      background: #111111;
-      color: #F5F5F2;
-    }
+  --text-primary: #F5F5F2;
+  --text-secondary: #C8C8C8;
+  color: var(--text-primary);
+}
+
+body.dark p,
+body.dark li {
+  color: var(--text-secondary);
+}
+
+body.dark h1,
+body.dark h2,
+body.dark h3 {
+  color: var(--text-primary);
+}
+body.dark .card {
+  background: #1A1A1A;
+  border-color: #2A2A2A;
+}
+body.dark nav.scrolled {
+  background: #000;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+}
+body.dark a {
+  color: #4D8DFF;
+}
+body.dark button,
+body.dark .btn {
+  background: #4D8DFF;
+  color: #111;
+  border: none;
+}
+
+body.dark button:hover,
+body.dark .btn:hover {
+  background: #6EA0FF;
+}
+body.dark i {
+  color: #4D8DFF;
+}
+body.dark .accent-border {
+  border-color: #4D8DFF;
+}
+body.dark h2 {
+  border-bottom: 2px solid #4D8DFF;
+  padding-bottom: 4px;
+}
+</style>
+  
+
 
     /* NAVBAR */
     nav {
@@ -311,7 +369,6 @@ footer {
   justify-content: center;
   gap: 16px;
 }
-
 .footer-icons a {
   color: inherit;
   font-size: 18px;
@@ -322,33 +379,105 @@ footer {
 .footer-icons a:hover {
   opacity: 1;
 }
-  </style>
+
+/* MOBILE SPACING TIGHTENING */
+@media (max-width: 700px) {
+
+  /* Reduce section spacing */
+  section {
+    margin: 48px auto;
+  }
+
+  /* Tighten hero spacing */
+  .hero {
+    padding: 140px 20px 80px;
+  }
+
+  /* Reduce card padding */
+  .card {
+    padding: 24px;
+  }
+
+  /* Tighten paragraph spacing */
+  .about p {
+    margin-bottom: 16px;
+  }
+
+  /* Reduce navbar padding */
+  nav {
+    padding: 16px 20px;
+  }
+
+  /* Tighten section header spacing */
+  section h2 {
+    margin-bottom: 16px;
+  }
+
+  /* Reduce list item spacing */
+  ul li {
+    margin-bottom: 8px;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+ /* MOBILE TYPOGRAPHY TUNING */
+@media (max-width: 700px) {
+
+  /* Slightly smaller body text */
+  body {
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  /* Reduce hero text size */
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+
+  /* Section headers slightly smaller */
+  section h2 {
+    font-size: 26px;
+  }
+
+  /* Subheaders */
+  h3 {
+    font-size: 20px;
+  }
+}
+
+</style>
 </head>
 
 <body>
 
   <!-- NAVBAR -->
-  <nav id="navbar">
-    <div class="nav-left">
-      <span class="brand">Dylan Reid Media</span>
-      <a href="#about">About</a>
-      <a href="#work">Work</a>
-      <a href="#listen">Listen</a>
-      <a href="#schedule">Schedule</a>
-    </div>
+<nav id="navbar">
+  <div class="nav-left">
+    <span class="brand">Dylan Reid Media</span>
+    <a href="#about">About</a>
+    <a href="#work">Work</a>
+    <a href="#listen">Listen</a>
+    <a href="#services">Services</a>
+    <a href="#schedule">Schedule</a>
+  </div>
 
-    <div class="toggle" id="modeToggle">Light / Dark</div>
-  </nav>
+  <div class="toggle" id="modeToggle">Light / Dark</div>
+</nav>
 
-  <!-- HERO -->
-  <section class="hero">
+<!-- HERO -->
+<section class="hero">
   <h1>Dylan Reid</h1>
-  <h3>President, Dylan Reid Media</h3>
-  <p>Helping healthcare leaders deploy AI safely, responsibly, and in alignment with emerging regulation.</p>
+  <p>AI governance for reimbursement and prior authorization.</p>
+  <p>I help health systems, payers, and policy teams govern AI for reimbursement and prior authorization with CMS aligned clarity and risk frameworks.</p>
 </section>
 
-  <!-- ABOUT -->
-  <section id="about">
+<!-- ABOUT -->
+<section id="about">
   <h2>About Me</h2>
 
   <div class="about">
@@ -356,13 +485,18 @@ footer {
 
     <div>
       <p>
-        I help healthcare and payer organizations adopt AI safely, responsibly, and in alignment with emerging regulatory frameworks. 
-        My work focuses on governance, risk assessment, model oversight, and operational readiness for enterprise deployment.
+        I work at the intersection of AI, reimbursement, and prior authorization,
+        helping organizations bring clarity and alignment to systems that carry
+        real regulatory and operational risk. My background spans patient
+        advocacy, appropriations, and public affairs consulting, which gives me a
+        practical understanding of how healthcare decisions are made, funded, and
+        communicated.
       </p>
 
       <p>
-        Outside of AI governance, I’m an independent registered songwriter with BMI, writing modern country music. 
-        I spend my time between Dallas, Naples, Palm Springs, New York City, Toronto, and Nashville.
+        Outside of AI governance, I’m an independent registered songwriter with
+        BMI, writing modern country music. I spend my time between Dallas,
+        Naples, Palm Springs, New York City, Toronto, and Nashville.
       </p>
     </div>
   </div>
@@ -384,6 +518,8 @@ footer {
     <div class="card-footer">
       <a class="cta" href="https://substack.com/@aihealthcarethoughts" target="_blank">Explore My Work</a>
     </div>
+  </div>
+</section>
 
 
   <!-- LISTEN -->
@@ -427,30 +563,102 @@ footer {
     </div>
   </section>
 
-    <section id="services">
-  <h2>Work With Me</h2>
+  <!-- SERVICES -->
+<section id="services">
+  <h2>Services</h2>
+
+  <h3>What I Do</h3>
+  <p>
+    I help health systems, payers, and policy teams govern AI systems used in
+    reimbursement and prior authorization. My work focuses on clarity, oversight,
+    and alignment with CMS rules so organizations can deploy AI with confidence
+    and reduce regulatory and operational risk. I also understand how FDA’s
+    evolving approach to AI and machine learning intersects with reimbursement,
+    prior authorization, and healthcare operations.
+  </p>
+
+  <h3>Who I Help</h3>
+  <ul>
+    <li>Health systems</li>
+    <li>Payers</li>
+    <li>AI product teams</li>
+    <li>Compliance and risk teams</li>
+    <li>CMS adjacent policy groups</li>
+  </ul>
+
+  <h3>Problems I Solve</h3>
+  <ul>
+    <li>Understanding how CMS rules apply to AI models</li>
+    <li>Understanding how FDA’s AI and ML expectations intersect with reimbursement and prior authorization</li>
+    <li>Governing AI used in claims, coding, reimbursement, or prior authorization</li>
+    <li>Building explainability into model outputs</li>
+    <li>Reducing regulatory, operational, and reputational risk</li>
+    <li>Creating internal oversight frameworks</li>
+    <li>Communicating AI decisions clearly to clinicians, patients, and regulators</li>
+  </ul>
+
+  <h3>How I Work</h3>
+  <p>
+    I start by understanding your AI systems and where they intersect with
+    reimbursement or prior authorization. I map CMS rules to your model logic
+    and workflows, identify gaps in governance, oversight, and explainability,
+    and build frameworks your teams can use immediately. I communicate
+    everything in clear, direct language.
+  </p>
+
+  <h3>What You Get</h3>
+  <ul>
+    <li>Governance frameworks for AI used in reimbursement or prior authorization</li>
+    <li>CMS aligned guidance tailored to your systems</li>
+    <li>Explainability structures for model outputs</li>
+    <li>Risk assessments and mitigation pathways</li>
+    <li>Oversight and accountability models</li>
+    <li>Communication guidance for internal and external stakeholders</li>
+  </ul>
+
+  <h3>Work With Me</h3>
+  <p>
+    If your organization is building or evaluating AI systems that touch
+    reimbursement or prior authorization, I can help you bring clarity,
+    alignment, and confidence to your governance approach.
+  </p>
+  <p>
+    <a href="#schedule">Schedule a call</a> to discuss your needs and determine
+    whether we are a good fit.
+  </p>
+</section>
+
+<!-- CREDIBILITY -->
+<section id="credibility">
+  <h2>Why Work With Me</h2>
 
   <div class="card">
-    <h3>AI Governance Readiness Audit</h3>
     <p>
-      A focused review of your current and planned AI initiatives, identifying governance gaps, risk areas,
-      and oversight needs so leadership can move forward with confidence.
+      I work at the intersection of AI, reimbursement, and prior authorization,
+      bringing clarity to systems that carry real regulatory and operational
+      risk.
     </p>
-  </div>
 
-  <div class="card">
-    <h3>AI Risk & Oversight Workshop</h3>
     <p>
-      A live session with executives and stakeholders to align on responsible AI use, risk mitigation,
-      and practical oversight structures tailored to your organization.
+      My work is grounded in patient advocacy, appropriations, and public affairs
+      consulting, which gives me a practical understanding of how healthcare
+      decisions are made, funded, and communicated. I bring that experience into
+      AI governance, helping organizations navigate systems that carry real
+      regulatory and operational risk.
     </p>
-  </div>
 
-  <div class="card">
-    <h3>AI Policy Drafting Support</h3>
     <p>
-      Collaborative development of internal AI use guidelines and policies that reflect emerging regulation,
-      ethical considerations, and your organization’s risk appetite.
+      I’ve worked with leaders across healthcare, policy, and technology, giving
+      me a clear view of how reimbursement and prior authorization decisions
+      affect patients, clinicians, and payers. That perspective shapes the
+      clarity focused governance frameworks I build for AI systems.
+    </p>
+
+    <p>
+      My background allows me to translate complex AI, policy, and regulatory
+      issues into language that executives, clinicians, and policymakers can act
+      on. I help organizations bring alignment, oversight, and confidence to AI
+      systems that touch reimbursement and prior authorization.
     </p>
   </div>
 </section>
@@ -458,7 +666,7 @@ footer {
 
   <!-- SCHEDULE (REPLACEMENT BLOCK) -->
   <section id="schedule">
-    <h2>Schedule a Call</h2>
+    <h2>Schedule a 30 Minute Call</h2>
 
     <div class="card">
       <p>Tell me what you need help with, then schedule a time.</p>
@@ -484,7 +692,7 @@ footer {
   </section>
 <!-- CALENDLY -->
 <section id="calendly">
-  <h2>Book Through Calendly</h2>
+  <h2>Book Your Consultation</h2>
 
   <div class="card">
     <div class="calendly-inline-widget"
