@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dylan Reid Media</title>
 
-  <meta name="description" content="AI governance for reimbursement and prior authorization.">
+  <meta name="description" content="Helping hospitals, health plans, and AI teams use AI safely for reimbursement and prior authorization.">
   <meta property="og:title" content="Dylan Reid Media">
   <meta property="og:description" content="AI governance for reimbursement and prior authorization.">
   <meta property="og:type" content="website">
@@ -13,406 +13,227 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
- <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-/* -----------------------------------------------------
-   GLOBAL TYPOGRAPHY + PREMIUM TYPE SCALE
------------------------------------------------------ */
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Helvetica, Arial, sans-serif;
-  background: #F5F5F2;
-  color: #111;
-  font-size: 18px;
-  line-height: 1.75;
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-h1 {
-  font-size: 48px;
-  line-height: 1.2;
-  font-weight: 700;
-}
-
-h2 {
-  font-size: 32px;
-  line-height: 1.3;
-  font-weight: 600;
-}
-
-h3 {
-  font-size: 22px;
-  line-height: 1.4;
-  font-weight: 600;
-  margin-top: 28px;
-  margin-bottom: 12px;
-}
-
-p { margin-bottom: 20px; }
-ul li { margin-bottom: 12px; }
-
-footer {
-  font-size: 15px;
-  opacity: 0.85;
-}
-
-/* DARK MODE */
-body.dark {
-  background: #111;
-  color: #F5F5F2;
-}
-
-
-/* -----------------------------------------------------
-   NAVBAR
------------------------------------------------------ */
-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 24px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: padding 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
-  z-index: 1000;
-  background: transparent;
-}
-
-nav.scrolled {
-  background: #111;
-  padding: 14px 40px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
-}
-
-.nav-left {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-}
-
-nav a {
-  text-decoration: none;
-  color: inherit;
-  font-weight: 500;
-  transition: opacity 0.2s ease;
-}
-
-nav a:hover { opacity: 0.6; }
-
-.toggle {
-  cursor: pointer;
-  opacity: 0.8;
-}
-
-
-/* -----------------------------------------------------
-   HERO
------------------------------------------------------ */
-.hero {
-  text-align: center;
-  padding: 200px 20px 200px;
-}
-
-.hero h1 {
-  font-size: 48px;
-  font-weight: 700;
-  margin-bottom: 12px;
-}
-
-.hero p {
-  font-size: 20px;
-  opacity: 0.8;
-}
-
-
-/* -----------------------------------------------------
-   SECTION WRAPPER
------------------------------------------------------ */
-section {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 0 20px;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.7s ease;
-}
-
-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-section h2 {
-  font-size: 32px;
-  margin-bottom: 24px;
-  position: relative;
-}
-
-section h2::after {
-  display: none;
-}
-
-
-/* -----------------------------------------------------
-   SECTION CARD
------------------------------------------------------ */
-.section-card {
-  background: white;
-  border-radius: 16px;
-  padding: 40px;
-  margin: 48px auto;
-  box-shadow:
-    0 2px 6px rgba(0,0,0,0.03),
-    0 12px 32px rgba(0,0,0,0.04);
-}
-
-body.dark .section-card {
-  background: #1A1A1A;
-  box-shadow: 0 4px 20px rgba(255,255,255,0.06);
-}
-
-.section-card ul li {
-  margin-bottom: 16px;
-}
-
-.section-card .cta {
-  margin-top: 24px;
-}
-
-
-/* -----------------------------------------------------
-   ABOUT
------------------------------------------------------ */
-.about-section {
-  padding: 80px 0;
-}
-
-.about {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-}
-
-.about img {
-  width: 220px;
-  height: 220px;
-  border-radius: 16px;
-  object-fit: cover;
-}
-
-.about-text {
-  max-width: 600px;
-}
-
-@media (min-width: 700px) {
-  .about {
-    flex-direction: row;
-    align-items: center;
-  }
-}
-
-
-/* -----------------------------------------------------
-   PLATFORM ICONS
------------------------------------------------------ */
-.platform-icons {
-  display: flex;
-  gap: 24px;
-  margin-top: 24px;
-  margin-bottom: 24px;
-  flex-wrap: wrap;
-}
-
-.platform-icons a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: #111;
-  color: white;
-  font-size: 20px;
-  transition: transform 0.2s ease;
-}
-
-
-/* -----------------------------------------------------
-   LISTEN & SUBSCRIBE
------------------------------------------------------ */
-.subscribe-icons {
-  margin-top: 24px;
-}
-
-
-/* -----------------------------------------------------
-   CTA BUTTON
------------------------------------------------------ */
-.cta {
-  padding: 12px 24px;
-  background: #111;
-  color: white;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: 600;
-  display: inline-block;
-  transition: opacity 0.2s ease;
-}
-
-.cta:hover { opacity: 0.8; }
-
-body.dark .cta {
-  background: #F5F5F2;
-  color: #111;
-}
-
-
-/* -----------------------------------------------------
-   SERVICES
------------------------------------------------------ */
-.services-section {
-  padding: 80px 0;
-}
-
-.services h3 {
-  margin-top: 36px;
-}
-
-
-/* -----------------------------------------------------
-   SCHEDULE FORM
------------------------------------------------------ */
-.schedule-form > * {
-  margin-bottom: 20px;
-}
-
-.schedule-card {
-  box-shadow:
-    0 2px 6px rgba(0,0,0,0.03),
-    0 12px 32px rgba(0,0,0,0.04);
-  padding: 40px;
-  border-radius: 16px;
-}
-
-
-/* -----------------------------------------------------
-   FOOTER
------------------------------------------------------ */
-footer {
-  margin-top: 120px;
-  padding: 40px 20px;
-  text-align: center;
-  opacity: 0.7;
-  font-size: 14px;
-}
-
-
-/* -----------------------------------------------------
-   MOBILE TYPOGRAPHY + SPACING
------------------------------------------------------ */
-@media (max-width: 700px) {
-
-  body {
-    line-height: 1.8;
-  }
-
-  p {
-    margin-bottom: 18px;
-  }
-
-  ul li {
-    margin-bottom: 10px;
-  }
-
-  section {
-    margin: 32px auto;
-  }
-
-  .section-card {
-    padding: 24px;
-  }
-
-  section h2 {
-    font-size: 26px;
-    margin-bottom: 20px;
-  }
-
-  h3 {
-    margin-top: 24px;
-    margin-bottom: 10px;
-  }
-
-  .about img {
-    width: 140px;
-    height: 140px;
-  }
-
-  nav {
-    padding: 16px 20px;
-  }
-
-  .platform-icons {
-    gap: 16px;
-  }
-
-  .platform-icons a {
-    width: 36px;
-    height: 36px;
-    font-size: 18px;
-  }
-}
-
-html { scroll-behavior: smooth; }
-#calendly { display: none; }
-#calendly.visible { display: block; }
-</style>
-
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Helvetica, Arial, sans-serif;
+      background: #F5F5F2;
+      color: #111;
+      font-size: 18px;
+      line-height: 1.75;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    h1 { font-size: 48px; font-weight: 700; line-height: 1.2; }
+    h2 { font-size: 32px; font-weight: 600; margin-bottom: 20px; }
+    h3 { font-size: 22px; font-weight: 600; margin-top: 28px; margin-bottom: 12px; }
+
+    p { margin-bottom: 20px; }
+    ul li { margin-bottom: 12px; }
+
+    body.dark { background: #111; color: #F5F5F2; }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 24px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: padding 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+      z-index: 1000;
+      background: transparent;
+    }
+
+    nav.scrolled {
+      background: #111;
+      color: #F5F5F2;
+      padding: 14px 40px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+    }
+
+    .nav-left { display: flex; align-items: center; gap: 32px; }
+
+    nav a {
+      text-decoration: none;
+      color: inherit;
+      font-weight: 500;
+      transition: opacity 0.2s ease;
+    }
+
+    nav a:hover { opacity: 0.6; }
+
+    .toggle { cursor: pointer; opacity: 0.8; }
+
+    .hero {
+      text-align: center;
+      padding: 200px 20px 160px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .hero h2 {
+      font-size: 20px;
+      opacity: 0.75;
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      opacity: 0.85;
+      margin-top: 12px;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.7s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section-card {
+      background: white;
+      border-radius: 16px;
+      padding: 40px;
+      margin: 48px auto;
+      box-shadow:
+        0 2px 6px rgba(0,0,0,0.03),
+        0 12px 32px rgba(0,0,0,0.04);
+    }
+
+    body.dark .section-card {
+      background: #1A1A1A;
+      box-shadow: 0 4px 20px rgba(255,255,255,0.06);
+    }
+
+    .about {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .about img {
+      width: 220px;
+      height: 220px;
+      border-radius: 16px;
+      object-fit: cover;
+    }
+
+    @media (min-width: 700px) {
+      .about { flex-direction: row; align-items: center; }
+    }
+
+    .platform-icons {
+      display: flex;
+      gap: 24px;
+      margin: 24px 0;
+      flex-wrap: wrap;
+    }
+
+    .platform-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #111;
+      color: white;
+      font-size: 20px;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .platform-icons a:hover {
+      transform: translateY(-2px);
+      opacity: 0.85;
+    }
+
+    .cta {
+      padding: 12px 24px;
+      background: #111;
+      color: white;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-block;
+      transition: opacity 0.2s ease;
+    }
+
+    .cta:hover { opacity: 0.8; }
+
+    body.dark .cta { background: #F5F5F2; color: #111; }
+
+    select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    footer {
+      margin-top: 120px;
+      padding: 40px 20px;
+      text-align: center;
+      opacity: 0.7;
+      font-size: 14px;
+    }
+
+    @media (max-width: 700px) {
+      .section-card { padding: 24px; }
+      .about img { width: 140px; height: 140px; }
+      nav { padding: 16px 20px; }
+    }
+
+    #calendly { display: none; }
+    #calendly.visible { display: block; }
+  </style>
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
   <nav id="navbar">
     <div class="nav-left">
       <span class="brand">Dylan Reid Media</span>
       <a href="#about">About</a>
       <a href="#work">Work</a>
+      <a href="#projects">Projects</a>
+      <a href="#news">News</a>
       <a href="#listen">Listen</a>
       <a href="#services">Services</a>
+      <a href="#credibility">Why Work With Me</a>
       <a href="#schedule">Schedule</a>
     </div>
     <div class="toggle" id="modeToggle">Light / Dark</div>
   </nav>
 
-<section class="hero">
-  <h1>Dylan Reid</h1>
-  <h2>President, Dylan Reid Media</h2>
-  <p>AI governance for reimbursement and prior authorization.</p>
-</section>
-
-
+  <section class="hero">
+    <h1>Dylan Reid</h1>
+    <h2>President, Dylan Reid Media</h2>
+    <p>I help hospitals, health plans, and AI teams use AI safely for reimbursement, claims, coding, and prior authorization.</p>
+  </section>
   <!-- ABOUT -->
   <section id="about">
     <div class="section-card">
       <h2>About Me</h2>
-
       <div class="about">
         <img src="C4D87DB4-32D6-4447-87C0-2A28D69F317A.JPG" alt="Dylan Reid" />
-
         <div>
-          <p>
-            I work at the intersection of AI, reimbursement, and prior authorization,
-            helping organizations bring clarity and alignment to systems that carry
-            real regulatory and operational risk.
-          </p>
+          <p>I work where AI meets reimbursement and prior authorization. My job is simple: help teams understand what their AI is doing, make sure it follows the rules, and keep patients, clinicians, and payers from being hurt by bad decisions.</p>
 
-          <p>
-            Outside of AI governance, I’m an independent registered songwriter with
-            BMI, writing modern country music. I split my time between Dallas,
-            Naples, Palm Springs, New York City, Toronto, and Nashville.
-          </p>
+          <p>I’ve spent years around healthcare, policy, and technology—supporting patient advocacy, appropriations work, and public affairs consulting. That means I understand how decisions get made, funded, and communicated in the real world.</p>
+
+          <p>Outside of AI and healthcare, I’m a registered songwriter with BMI, writing modern country music. I split my time between Dallas, Naples, Palm Springs, New York City, Toronto, and Nashville.</p>
         </div>
       </div>
     </div>
@@ -422,31 +243,96 @@ html { scroll-behavior: smooth; }
   <section id="work">
     <div class="section-card">
       <h2>My Work</h2>
-
-      <p>I create tools, writing, and analysis that help leaders navigate responsible AI.</p>
+      <p>I create tools, writing, and analysis that help leaders navigate responsible AI in healthcare.</p>
 
       <ul style="padding-left: 20px;">
-        <li><strong>Book —</strong> <a href="https://www.amazon.com/dp/B0FBSY1V19">Hope Is Not a Strategy</a></li>
-        <li><strong>Newsletter —</strong> Monthly insights on AI governance and policy.</li>
-        <li><strong>Podcast —</strong> Conversations on AI, healthcare, and regulation.</li>
+        <li><strong>Book –</strong> <a href="https://www.amazon.com/dp/BOFBSY1V19" target="_blank">Hope Is Not a Strategy</a></li>
+        <li><strong>Newsletter –</strong> Monthly insights on AI, healthcare, and policy.</li>
+        <li><strong>Podcast –</strong> Conversations on AI, healthcare, and regulation.</li>
       </ul>
 
       <a class="cta" href="https://substack.com/@aihealthcarethoughts" target="_blank">Explore My Work</a>
     </div>
   </section>
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-card">
+      <h2>Tools & Projects</h2>
 
+      <p>I build simple tools that help teams understand, test, or explain their AI systems. Here are a few examples:</p>
+
+      <h3>ICD‑10 Explorer</h3>
+      <p>A fast, lightweight tool for searching ICD‑10‑CM codes with clean filters, autocomplete, and structured detail pages. Built with Python, SQLite, SQLAlchemy, and Streamlit. It ingests the official ICD‑10‑CM source files, cleans them up, stores them in a structured database, and exposes everything through a clean, reactive UI.</p>
+
+      <h3>Coding Validator — Synthetic Healthcare Claims Demo</h3>
+      <p>A small demonstration of how claim validation can work using synthetic patient data, transparent rule logic, and FDA‑aligned governance thinking. All patient data is synthetic and does not represent real individuals.</p>
+
+      <h3>Prior Authorization App</h3>
+      <p>A simple Java application that shows how prior authorization logic can work in software. It includes a small rules engine, a basic UI, and an audit log. It gives a clear view of how UM decisions can be structured, explained, and recorded.</p>
+
+      <h3>Congress AI — Healthcare & AI Legislation Chatbot</h3>
+      <p>A retrieval‑augmented generation (RAG) system that lets you ask natural‑language questions about how members of Congress are engaging with healthcare and AI legislation across the 118th and 119th Congresses.</p>
+
+      <a class="cta" href="https://github.com/dylan199512" target="_blank">See More on GitHub</a>
+    </div>
+  </section>
+
+  <!-- NEWS & UPDATES -->
+  <section id="news">
+    <div class="section-card">
+      <h2>News & Updates</h2>
+
+      <p>Here’s a quick look at what I’ve been writing and working on lately across AI, healthcare, and policy.</p>
+
+      <h3>Recent Writing</h3>
+      <ul>
+        <li>
+          <strong>Introducing Dylan Reid Media</strong> — Why I started this work, what I focus on, and how I help teams use AI safely in healthcare.
+          <a href="https://aihealthcarethoughts.substack.com/p/introducing-dylan-reid-media" target="_blank">Read on Substack</a>
+        </li>
+
+        <li>
+          <strong>We Keep Blaming Insurers. We Won’t Talk About Patients.</strong> — A plain‑spoken look at how patient behavior, incentives, and system design shape outcomes just as much as payers do.
+          <a href="https://aihealthcarethoughts.substack.com/p/we-keep-blaming-insurers-we-wont" target="_blank">Read on Substack</a>
+        </li>
+
+        <li>
+          <strong>Trust Doesn’t Rebuild Itself</strong> — Why trust in healthcare keeps eroding, and what it takes to rebuild it in an AI‑driven world.
+          <a href="https://aihealthcarethoughts.substack.com/p/trust-doesnt-rebuild-itself" target="_blank">Read on Substack</a>
+        </li>
+
+        <li>
+          <strong>The Constitution Wrote Us a Permission Slip in 1787</strong> — A simple explanation of how the Constitution shapes federal authority over healthcare and technology.
+          <a href="https://aihealthcarethoughts.substack.com/p/the-constitution-wrote-us-a-permission" target="_blank">Read on Substack</a>
+        </li>
+      </ul>
+
+      <h3>Recent Projects</h3>
+      <ul>
+        <li><strong>ICD‑10 Explorer</strong> — A fast, lightweight tool for searching ICD‑10‑CM codes with clean filters and structured detail pages.</li>
+        <li><strong>Congress AI</strong> — A RAG system that lets you explore how lawmakers talk about healthcare and AI legislation.</li>
+      </ul>
+
+      <h3>Speaking & Media</h3>
+      <ul>
+        <li><strong>Guest on The AI Healthcare Podcast</strong> — Talking about how CMS rules apply to AI models in real workflows.</li>
+        <li><strong>Panel: Responsible AI in Clinical Operations</strong> — A conversation about governance, oversight, and explainability.</li>
+      </ul>
+
+      <p style="margin-top: 24px;">For more updates, you can follow my writing on Substack or connect with me on LinkedIn.</p>
+    </div>
+  </section>
   <!-- LISTEN -->
   <section id="listen">
     <div class="section-card">
       <h2>Listen & Subscribe</h2>
-
-      <p>Follow my work across platforms.</p>
+      <p>Follow my work across platforms—podcasts, writing, and more.</p>
 
       <div class="platform-icons">
         <a href="https://open.spotify.com/show/312TRzKHZrDA33dhyfPUPz" target="_blank"><i class="fa-brands fa-spotify"></i></a>
         <a href="https://podcasts.apple.com/us/podcast/the-ai-healthcare-podcast/id1639882528" target="_blank"><i class="fa-brands fa-apple"></i></a>
         <a href="https://substack.com/@aihealthcarethoughts" target="_blank"><i class="fa-solid fa-envelope"></i></a>
-        <a href="https://www.youtube.com/@TheAIHealthcarePodcast/videos" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://www.youtube.com/@TheAlHealthcarePodcast/videos" target="_blank"><i class="fa-brands fa-youtube"></i></a>
         <a href="https://www.linkedin.com/in/dylan-reid-moskowitz/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
         <a href="https://github.com/dylan199512" target="_blank"><i class="fa-brands fa-github"></i></a>
       </div>
@@ -461,78 +347,61 @@ html { scroll-behavior: smooth; }
       <h2>Services</h2>
 
       <h3>What I Do</h3>
-      <p>
-        I help health systems, payers, and policy teams govern AI systems used in
-        reimbursement and prior authorization. My work focuses on clarity, oversight,
-        and alignment with CMS rules.
-      </p>
+      <p>I help health systems, payers, and AI product teams make sure their AI systems follow the rules when they’re used for reimbursement, claims, coding, and prior authorization. I help you understand what your AI is doing, keep you out of trouble, and make sure everything lines up with CMS and FDA expectations.</p>
 
       <h3>Who I Help</h3>
       <ul>
         <li>Health systems</li>
-        <li>Payers</li>
+        <li>Payers and health plans</li>
         <li>AI product teams</li>
         <li>Compliance and risk teams</li>
-        <li>CMS adjacent policy groups</li>
+        <li>Groups working near CMS and health policy</li>
       </ul>
 
       <h3>Problems I Solve</h3>
       <ul>
-        <li>Understanding how CMS rules apply to AI models</li>
-        <li>Understanding how FDA’s AI expectations intersect with reimbursement</li>
-        <li>Governing AI used in claims, coding, or prior authorization</li>
-        <li>Building explainability into model outputs</li>
-        <li>Reducing regulatory and operational risk</li>
-        <li>Creating internal oversight frameworks</li>
-        <li>Communicating AI decisions clearly</li>
+        <li>Figuring out how CMS rules apply to your AI models.</li>
+        <li>Understanding what the FDA expects from AI and how that affects reimbursement.</li>
+        <li>Making sure AI used in claims, coding, or prior authorization behaves the way it should.</li>
+        <li>Explaining AI decisions in plain English.</li>
+        <li>Avoiding mistakes that could cost money or slow things down.</li>
+        <li>Setting up simple oversight so nothing slips through the cracks.</li>
+        <li>Helping teams talk about AI clearly with clinicians, executives, and partners.</li>
       </ul>
 
       <h3>How I Work</h3>
-      <p>
-        I map CMS rules to your model logic and workflows, identify gaps in governance,
-        oversight, and explainability, and build frameworks your teams can use immediately.
-      </p>
+      <p>I look at how your AI makes decisions, compare that to what CMS and the FDA expect, and point out anything that could cause problems. Then I help you fix it. Everything I build is meant to be used right away—no long reports, no confusing jargon.</p>
 
       <h3>What You Get</h3>
       <ul>
-        <li>Governance frameworks for AI in reimbursement or prior authorization</li>
-        <li>CMS aligned guidance tailored to your systems</li>
-        <li>Explainability structures for model outputs</li>
-        <li>Risk assessments and mitigation pathways</li>
-        <li>Oversight and accountability models</li>
-        <li>Communication guidance for stakeholders</li>
+        <li>A clear framework for how to manage and oversee your AI.</li>
+        <li>Guidance that matches CMS and FDA expectations.</li>
+        <li>Simple ways to explain how your AI works.</li>
+        <li>A list of risks and practical ways to handle them.</li>
+        <li>Oversight steps so your team knows who’s responsible for what.</li>
+        <li>Clear language you can use with leadership, clinicians, and partners.</li>
       </ul>
 
-      <p><a href="#schedule">Schedule a call</a> to discuss your needs.</p>
+      <p><a href="#schedule">Schedule a call</a> to talk through what you need.</p>
     </div>
   </section>
-
   <!-- WHY WORK WITH ME -->
   <section id="credibility">
     <div class="section-card">
       <h2>Why Work With Me</h2>
 
-      <p>
-        I work at the intersection of AI, reimbursement, and prior authorization,
-        bringing clarity to systems that carry real regulatory and operational risk.
-      </p>
+      <p>I work where AI meets reimbursement and prior authorization, helping teams avoid mistakes that can affect patients, clinicians, and payers.</p>
 
-      <p>
-        My background spans patient advocacy, appropriations, and public affairs
-        consulting, giving me a practical understanding of how healthcare decisions
-        are made, funded, and communicated.
-      </p>
+      <p>My background spans patient advocacy, appropriations, and public affairs consulting, so I understand how healthcare decisions are made, funded, and communicated. I’ve worked with leaders across healthcare, policy, and technology, giving me a clear view of how reimbursement and prior authorization decisions affect real people.</p>
 
-      <p>
-        I’ve worked with leaders across healthcare, policy, and technology, giving
-        me a clear view of how reimbursement and prior authorization decisions
-        affect patients, clinicians, and payers.
-      </p>
+      <p>I translate complex AI, policy, and regulatory issues into language that executives, clinicians, and policymakers can act on. My goal is always the same: make AI safer, clearer, and easier to trust.</p>
 
-      <p>
-        I translate complex AI, policy, and regulatory issues into language that
-        executives, clinicians, and policymakers can act on.
-      </p>
+      <h3>Professional Affiliations</h3>
+      <ul>
+        <li><strong>NIST RMF Critical Infrastructure Community</strong> — people working on risk, safety, and how to keep critical systems running the right way.</li>
+        <li><strong>Society of Young Health Policy Professionals</strong> — a national group focused on healthcare policy and innovation.</li>
+        <li><strong>All Tech Is Human</strong> — a global community advancing responsible technology.</li>
+      </ul>
     </div>
   </section>
 
@@ -541,10 +410,10 @@ html { scroll-behavior: smooth; }
     <div class="section-card">
       <h2>Schedule a 30 Minute Call</h2>
 
-      <p>Tell me what you need help with, then schedule a time.</p>
+      <p>Tell me what you need help with, then pick a time that works for you.</p>
 
       <label for="help-type">I need help with:</label>
-      <select id="help-type" name="help-type">
+      <select id="help-type">
         <option value="AI Governance Strategy">AI Governance Strategy</option>
         <option value="Model Risk Assessment">Model Risk Assessment</option>
         <option value="Responsible AI Deployment">Responsible AI Deployment</option>
@@ -565,10 +434,9 @@ html { scroll-behavior: smooth; }
   <section id="calendly">
     <div class="section-card">
       <h2>Book Your Consultation</h2>
-
       <div class="calendly-inline-widget"
-        data-url="https://calendly.com/dylan-reid"
-        style="min-width:320px;height:700px;">
+           data-url="https://calendly.com/dylan-reid"
+           style="min-width:320px;height:700px;">
       </div>
       <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
     </div>
@@ -590,7 +458,7 @@ html { scroll-behavior: smooth; }
       navbar.classList.toggle("scrolled", window.scrollY > 50);
     });
 
-    // Section reveal
+    // Section reveal animation
     const sections = document.querySelectorAll("section");
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -600,7 +468,7 @@ html { scroll-behavior: smooth; }
 
     sections.forEach(section => observer.observe(section));
 
-    // Schedule button
+    // Schedule button → reveal Calendly + open email
     document.getElementById("scheduleBtn").addEventListener("click", () => {
       const help = document.getElementById("help-type").value;
       const nda = document.getElementById("nda-needed").checked ? "Yes" : "No";
@@ -609,14 +477,14 @@ html { scroll-behavior: smooth; }
       calendlySection.classList.add("visible");
       calendlySection.scrollIntoView({ behavior: "smooth" });
 
-      const emailBody = `Help needed: ${help}%0D%0ANDA required: ${nda}`;
+      const emailBody = `Help needed: ${help}%0D%0A NDA required: ${nda}`;
       const mailtoLink = `mailto:dylan@dylan-reid.com?subject=Scheduling a Call&body=${emailBody}`;
-
       window.location.href = mailtoLink;
     });
   </script>
 
 </body>
 </html>
+
 
 
